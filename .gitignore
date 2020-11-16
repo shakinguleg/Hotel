@@ -10,3 +10,5 @@ $RECYCLE.BIN/
 .Trashes
 # Node.js
 client/node_modules/
+management/node_modules/
+server/node_modules/
