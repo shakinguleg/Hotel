@@ -1,0 +1,35 @@
+const {model,Schema} = require('mongoose')
+module.exports = model('room',{
+    tag:{
+        type:Array,
+        required:true
+    },
+    info:{
+        type:Array,
+        required:true
+    },
+    rate:{
+        type:String,
+        required:true
+    },
+    image:{
+        type:Array,
+        required:true
+    },
+    cover:{
+        type:String,
+        required:true 
+    },
+    time:{
+        type:String,
+        required:true
+    },
+    price:{
+        type:Number,
+        required:true,
+    },
+    title:{
+        type:String,
+        required:true,
+    }
+})
