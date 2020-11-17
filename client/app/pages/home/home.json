@@ -1,8 +1,9 @@
 {
   "usingComponents": {
     "banner": "../../components/banner/banner",
-    "recommend":"../../components/recommmend/recommend",
-    "order":"../../components/order/order"
+    "scroll": "../../components/scroll/scroll",
+    "recommend": "../../components/recommmend/recommend",
+    "order": "../../components/order/order"
   },
   "navigationBarTitleText": "宏达万枫酒店"
 }

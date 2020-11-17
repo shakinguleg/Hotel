@@ -1,7 +1,7 @@
-
 <view class="home">
   <view class="top_banner">
-    <banner circular="true" autoplay="true" swiperData="{{top_banner_data}}"></banner>
+    <banner circular="true" autoplay="true" swiperData="{{top_banner_data}}" easing="easeInOutCubic">
+    </banner>
     <view class="title"><text class="top_banner_text">万枫酒店欢迎您</text></view>
   </view>
   <!-- 优惠活动 -->
@@ -33,11 +33,12 @@
       <text class="about_text">{{item.text}}</text>
     </view>
   </view>
-  <!-- 轮播图 -->
-  <view class="center_banner">
-    <banner class="scroll" circular="true" autoplay="true" swiperData="{{center_banner_data}}"></banner>
+  <!-- 猜你喜欢 -->
+  <view class="scroll_view">
+    <view class="home_scroll_title_wrap">
+      <view class="scroll_view_spacer"></view><text class="home_scroll_title">猜你喜欢</text>
+    </view>
+    <scroll scrollData="{{center_banner_data}}"></scroll>
   </view>
 
 </view>
-
-
