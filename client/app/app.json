@@ -1,10 +1,17 @@
 {
+  "entryPagePath": "pages/homeAboutPages/gift/gift",
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
     "pages/order/order",
     "pages/mine/mine",
     "pages/reserve_room/reserve_room"
+    "pages/login/login",
+    "pages/homeAboutPages/gift/gift",
+    "pages/homeAboutPages/pointsMall/pointsMall",
+    "pages/homeAboutPages/coupon/coupon",
+    "pages/homeAboutPages/dailySign/dailySign",
+    "pages/homeAboutPages/myOrder/myOrder"
   ],
   "tabBar": {
     "list": [

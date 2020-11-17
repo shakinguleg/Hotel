@@ -4,29 +4,37 @@ Component({
    * 组件的属性列表
    */
   properties: {
-    circular: {
+    circular: { //是否循环
       type: Boolean,
       value: false
     },
-    autoplay: {
+    autoplay: { //自动播放
       type: Boolean,
       value: false
     },
-    interval: {
+    interval: { //切换间隔
       type: Number,
-      value: 2000
+      value: 3000
     },
-    duration: {
+    duration: { //动画时间
       type: Number,
       value: 1000,
     },
-    swiperData: {
+    swiperData: { //数据
       type: Array,
       value: []
     },
-    "easing-function": {
+    easing: { //动画方式
       type: String,
-
+      value: "easeInOutCubic"
+    },
+    width: {
+      type: String,
+      value: "100%"
+    },
+    height: {
+      type: String,
+      value: "134px"
     }
   },
 
@@ -40,7 +48,11 @@ Component({
   /**
    * 组件的方法列表
    */
-  methods: {
-
+  methods: {},
+  observers: {
+    swiperData: (newVal, oldVal) => {
+      // console.log("newVal: " + JSON.stringify(newVal));
+    }
   }
+
 })
