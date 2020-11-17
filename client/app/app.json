@@ -1,5 +1,4 @@
 {
-  "entryPagePath": "pages/orderSuccess/orderSuccess",
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
@@ -15,6 +14,8 @@
     "pages/orderSuccess/orderSuccess"
   ],
   "tabBar": {
+    "color": "#333",
+    "selectedColor": "#23BDA9",
     "list": [
       {
         "pagePath": "pages/home/home",

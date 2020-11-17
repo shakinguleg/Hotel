@@ -59,7 +59,7 @@ Component({
   },
   observers: {
     scrollData: (newVal, oldVal) => {
-      console.log(newVal);
+      // console.log(newVal);
 
     }
   }

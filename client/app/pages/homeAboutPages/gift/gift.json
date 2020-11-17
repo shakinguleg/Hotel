@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "bottomBar": "../../../components/bottomBar/bottomBar",
+    "rechargeItem": "../../../components/rechargeItem/rechargeItem"
+  }
 }
