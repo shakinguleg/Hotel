@@ -45,7 +45,7 @@
   <!-- 今日推荐 -->
   <view class="today_recommend">
     <view class="title">
-      <text class="title_t">今日推荐</text>
+      <view class="title_t">今日推荐</view>
     </view>
     <view class="recommend_list">
       <recommend/>
