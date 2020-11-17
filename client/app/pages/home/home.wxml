@@ -1,2 +1,43 @@
-<!--app/pages/home/home.wxml-->
-<text>app/pages/home/home.wxml</text>
+
+<view class="home">
+  <view class="top_banner">
+    <banner circular="true" autoplay="true" swiperData="{{top_banner_data}}"></banner>
+    <view class="title"><text class="top_banner_text">万枫酒店欢迎您</text></view>
+  </view>
+  <!-- 优惠活动 -->
+  <view class="youhui">
+    <view class="left">
+      <image src="../../images/hongbao.png" class="youhui_left_img" mode="widthFix"></image>
+      <text>满</text>
+      <view class="text_wrap">
+        <text>￥</text>
+        <text>500</text>
+      </view>
+      <text>减</text>
+      <view class="text_wrap">
+        <text>￥</text>
+        <text>50</text>
+      </view>
+    </view>
+    <view class="spacer"></view>
+    <view class="right">
+      <text>微信专享</text>
+      <text class="getNow">立即领取</text>
+      <image src="../../images/you.png" class="youhui_right_img" mode="widthFix"></image>
+    </view>
+  </view>
+  <!-- 相关入口 -->
+  <view class="about">
+    <view class="about_item" wx:for="{{aboutData}}" wx:key="index">
+      <image class="about_img" src="{{item.imgPath}}" mode="widthFix"></image>
+      <text class="about_text">{{item.text}}</text>
+    </view>
+  </view>
+  <!-- 轮播图 -->
+  <view class="center_banner">
+    <banner class="scroll" circular="true" autoplay="true" swiperData="{{center_banner_data}}"></banner>
+  </view>
+
+</view>
+
+
