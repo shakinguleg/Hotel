@@ -65,7 +65,7 @@ Page({
             arr.push({
               id: item.id,
               imgPath: BASE_URL + item.cover,
-              price: item.price,
+              price: "￥" + item.price,
               title: item.title
             })
           })
