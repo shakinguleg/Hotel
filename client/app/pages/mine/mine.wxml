@@ -1,2 +1,94 @@
 <!--app/pages/mine/mine.wxml-->
-<text>app/pages/mine/mine.wxml</text>
+<view class="userInfo">
+  <view class="top">
+    <view class="info">
+      <view class="left">
+        <view class="avatar">
+          <open-data type="userAvatarUrl"></open-data>
+        </view>
+        <view class="name">
+          <open-data type="userNickName"></open-data>
+        </view>
+      </view>
+      <view class="right">
+        <view class="vip">
+          <text>白银会员</text>
+          <image src="../../images/勋章.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="time">
+      <view class="tag">
+        <mp-icon icon="time" color="white" size="{{18}}"></mp-icon>
+        <text>您已加入万枫酒店365天</text>
+      </view>
+      <view class="tag">
+        <mp-icon icon="eyes-off" color="white" size="{{18}}"></mp-icon>
+        <text>余额 ￥ {{user.money}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="_bottom">
+    <view class="_item">
+      <text class="price">5188.58</text>
+      <text>我的赏金</text>
+    </view>
+    <view class="_item">
+      <text class="price">1188.58</text>
+      <text>冻结中</text>
+    </view>
+    <view class="_item">
+      <text class="price">4188.58</text>
+      <text> 可提现</text>
+    </view>
+  </view>
+</view>
+
+<view class="tab">
+    <view class="tab-item">
+      <view class="left">
+        <image src="../../images/订单 (1).png"></image>
+        <text>我的订单</text>
+      </view>
+      <view class="right">
+        <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+    <view class="tab-item">
+      <view class="left">
+        <image src="../../images/会员.png"></image>
+        <text>我的会员</text>
+      </view>
+      <view class="right">
+        <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+    <view class="tab-item">
+      <view class="left">
+        <image src="../../images/金币.png"></image>
+        <text>我的服务券</text>
+      </view>
+      <view class="right">
+        <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+  
+    <view class="tab-item">
+      <view class="left">
+        <image src="../../images/优惠券.png"></image>
+        <text>我的优惠券</text>
+      </view>
+      <view class="right">
+        <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+    <view class="tab-item">
+      <view class="left">
+        <image src="../../images/礼包.png"></image>
+        <text>我的活动</text>
+      </view>
+      <view class="right">
+        <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
+      </view>
+    </view>
+</view>

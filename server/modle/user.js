@@ -1,6 +1,4 @@
 const {model,Schema} = require('mongoose')
-
-
 module.exports = model('user',{
     openID:{
         type:String,
@@ -22,9 +20,21 @@ module.exports = model('user',{
         type:Number,
         default:100
     },
-    coupon:{
+    coupon:[{
         type:Schema.Types.ObjectId,
         ref: 'coupon'
+    }],
+    outTimeCoupon:[{
+        type:Schema.Types.ObjectId,
+        ref: 'coupon' 
+    }],
+    usedCoupon:[{
+        type:Schema.Types.ObjectId,
+        ref: 'coupon' 
+    }],
+    money:{
+        type:Number,
+        default:0
     },
     time:{
         type:String,

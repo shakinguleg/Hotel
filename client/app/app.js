@@ -1,5 +1,8 @@
 //app.js
 App({
+  data:{
+      path:"http://10.36.150.18:3000/"
+  },
   onLaunch: function () {
     
     if (!wx.cloud) {
@@ -14,7 +17,28 @@ App({
         traceUser: true,
       })
     }
-
     this.globalData = {}
-  }
+    wx.cloud.callFunction({
+      name:'login'
+    }).then(res => {
+      this.data.openID = res.result.openid
+      wx.request({
+        url: this.data.path + "api/user/check?openID=" + res.result.openid,
+        method:"GET",
+        success:(res2)=>{
+          this.data.code = res2.data.code
+          if(!res2.data.code){
+            wx.redirectTo({
+              url: '/pages/login/login',
+            })
+          }else{
+            this.data.user = res2.data.data
+          }
+          
+        }
+      })
+      
+    })
+  },
+
 })
