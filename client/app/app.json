@@ -10,9 +10,12 @@
     "pages/homeAboutPages/pointsMall/pointsMall",
     "pages/homeAboutPages/coupon/coupon",
     "pages/homeAboutPages/dailySign/dailySign",
-    "pages/homeAboutPages/myOrder/myOrder"
+    "pages/homeAboutPages/myOrder/myOrder",
+    "pages/orderSuccess/orderSuccess"
   ],
   "tabBar": {
+    "color": "#333",
+    "selectedColor": "#23BDA9",
     "list": [
       {
         "pagePath": "pages/home/home",

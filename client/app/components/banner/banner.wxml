@@ -1,6 +1,6 @@
 <swiper class="swiper" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}"
   easing-function="easeInOutCubic" style="width:{{width}};height:{{height}}">
-  <swiper-item wx:for="{{swiperData}}" wx:key="index" style="width:{{width}}; height:{{height}}">
+  <swiper-item wx:for="{{swiperData}}" wx:key="banner" style="width:{{width}}; height:{{height}}">
     <image class=" img" src="{{item.imgPath}}" mode="widthFix" style="width:{{width}}; height:{{height}}">
     </image>
   </swiper-item>

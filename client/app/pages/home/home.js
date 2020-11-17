@@ -37,10 +37,13 @@ Page({
     wx.navigateTo({
       url: ev.currentTarget.dataset.action,
     })
-    console.log(ev);
+    // console.log(ev);
   },
 
   onLoad: function (options) {
+    
+
+
     // 获取banner图地址
     wx.request({
       url: BANNER_URL,
