@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-icon": "../../miniprogram_npm/weui-miniprogram/icon/icon"
+  },
+  "navigationBarTitleText": "个人中心",
+  "navigationBarBackgroundColor": "#1D243D",
+  "navigationBarTextStyle": "white"
 }

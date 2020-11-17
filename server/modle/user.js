@@ -32,6 +32,10 @@ module.exports = model('user',{
         type:Schema.Types.ObjectId,
         ref: 'coupon' 
     }],
+    money:{
+        type:Number,
+        default:0
+    },
     time:{
         type:String,
         required:true

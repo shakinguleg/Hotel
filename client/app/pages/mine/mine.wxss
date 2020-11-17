@@ -1,1 +1,87 @@
 /* app/pages/mine/mine.wxss */
+.avatar{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15rpx;
+}
+.userInfo{
+  background-color: #1D243D;
+  padding: 40rpx 0rpx 0 0;
+}
+.top{
+  width: 80%;
+ margin:  auto;
+  background-color: #9CA9BC;padding: 20rpx 20rpx;
+  border-radius: 25rpx 25rpx 0 0;
+}
+.info{
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  
+}
+.left{
+  display: flex;
+  align-items: center;
+}
+.right{
+  display: flex;
+  align-items: center;
+}
+.vip{
+  display: flex;
+  align-items: center;
+}
+.right image{
+  width: 50rpx;
+  height: 50rpx;
+}
+.time{
+  margin-top: 20rpx;
+  color: #fff;
+  font-size: 26rpx;
+}
+.tag{
+  display: flex;
+  align-items: center;
+}
+.time text{
+  margin-left: 10rpx;
+}
+._bottom{
+  
+  display: flex;
+  justify-content: space-between;
+  color: #fff;
+  height: 180rpx !important;
+  background-color: #464A56;
+}
+._bottom ._item{
+  padding: 15rpx 0;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-around;
+}
+.tab{
+  margin-top: 10rpx;
+}
+.tab-item{
+  padding: 20rpx 40rpx;
+  display: flex;
+  color:#666;
+  justify-content: space-between;
+  border-bottom: 1px #ccc solid;
+}
+.tab-item .left{
+  display: flex;
+  align-items: center;
+}
+.tab-item image{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}

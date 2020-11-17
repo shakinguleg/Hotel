@@ -1,9 +1,11 @@
 {
+  
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
     "pages/order/order",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/login/login"
   ],
   "tabBar": {
     "list": [

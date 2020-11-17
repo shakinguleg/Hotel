@@ -29,6 +29,19 @@
             openID  => 微信小程序返回的用户id
             couponId => 优惠券_id  
 
+    5. 充值
+        path: "/api/user/recharge"
+        方法：post
+        参数：
+            openID => 微信小程序返回的用户id
+            count => 充值数量
+    
+    6. 获取用户信息
+        path: "api/user/userInfo"
+        方法：get
+        参数：
+            openID => 微信小程序返回的用户id
+
 ### 轮播图
     1. 获取轮播图
         path："/api/banner/banner"，
@@ -87,7 +100,8 @@
             room => 房间_id
             rate => 评分
             content => 评论内容
-    . 获取房间评论
+            
+    3. 获取房间评论
         path："/api/room/roomComment"，
         方法：get
         参数：
