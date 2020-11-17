@@ -1,0 +1,8 @@
+<text>components/banner/banner.wxml</text>
+<swiper class="swiper" autoplay="{{autoplay}}" circular="{{circular}}" interval="{{interval}}" duration="{{duration}}"
+  easing-function="linear">
+  <swiper-item wx:for="{{swiperData}}" wx:key="index">
+    <image class=" img" src="{{item.imgPath}}" mode="widthFix">
+    </image>
+  </swiper-item>
+</swiper>

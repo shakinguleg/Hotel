@@ -1,1 +1,125 @@
-/* app/pages/home/home.wxss */
+.home {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+.top_banner {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top_banner_text {
+  font-size: 28px;
+  color: white;
+  font-weight: bold;
+  white-space: nowrap;
+  border: 2px dashed white;
+  padding: 4px;
+}
+
+/* 优惠 */
+.youhui {
+  width: 100%;
+  height: 28px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow: hidden;
+  color: #23BDA9;
+  font-size: 10px;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.text_wrap {
+  color: #FF0000;
+  font-size: 14px;
+}
+
+.youhui .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 48%;
+}
+
+.spacer {
+  width: 1px;
+  height: 40%;
+  background-color: #23BDA9;
+  margin: 0 10px;
+}
+
+.youhui_left_img {
+  width: 18px;
+}
+
+.youhui .right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 36%;
+}
+
+.getNow {
+  border: 1px solid #FAA672;
+  color: #FAA672;
+  border-radius: 7.4px;
+}
+
+.youhui_right_img {
+  width: 14px;
+}
+
+/* 相关入口 */
+.about {
+  margin-top: 6px;
+  background-color: white;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  color: #23BDA9;
+}
+
+.about_item {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_img {
+  width: 20px;
+  margin-bottom: 6px;
+}
+
+.about_text {
+  font-size: 10px;
+}
+
+.scroll {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+}
+
+
+.scroll_img {
+  width: 750rpx;
+}

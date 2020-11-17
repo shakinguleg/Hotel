@@ -1,3 +1,6 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "banner": "../../components/banner/banner"
+  },
+  "navigationBarTitleText": "宏达万枫酒店"
 }
