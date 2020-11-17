@@ -1,0 +1,30 @@
+<view class="reserve_room">
+  <!-- 酒店名称与房型 -->
+  <view class="title">
+    <text class="hotel_name">宏达万枫酒店</text>
+    <text class="room_type">豪华大床房</text>
+  </view>
+  <!-- 选择入住时间段 -->
+  <view class="picker">
+    <picker-date />
+  </view>
+  <!-- 提示信息 -->
+  <view class="tip">
+    <image src="../../images/tip.png"></image>
+    <text>您支付成功后，我们会在两个小时内处理您的订单，若不能确认订单，将全额退款之您的付款账户。</text>
+  </view>
+  <!-- 预定房间数量 -->
+  <view class="room_count">
+    <text>预定间数</text>
+    <view class="change_count">
+      <view class="reduce" bindtap="reduceAction">-</view>
+      <view class="exact_count">{{room_count}}间</view>
+      <view class="increase" bindtap="increaseAction">+</view>
+    </view>
+  </view>
+  <!-- 入住人员 -->
+  <view class="people_name">
+    <view>入住人</view>
+    <input class="name_input" type="text" value="" placeholder="请填写入住人姓名" placeholder-class="placeholder"/>
+  </view>
+</view>

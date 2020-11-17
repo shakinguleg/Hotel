@@ -3,7 +3,8 @@
     "pages/home/home",
     "pages/reserve/reserve",
     "pages/order/order",
-    "pages/mine/mine"
+    "pages/mine/mine",
+    "pages/reserve_room/reserve_room"
   ],
   "tabBar": {
     "list": [

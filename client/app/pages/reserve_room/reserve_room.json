@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "picker-date":"../../components/picker-date/picker-date"
+  },
+  "navigationBarTitleText":"客房预订"
+}

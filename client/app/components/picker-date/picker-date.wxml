@@ -1,0 +1,27 @@
+<!--components/picker-date/picker-date.wxml-->
+<view class="picker">
+  <view class="left">
+    <text class="tit">入住时间</text>
+    <!-- <text class="date">12月28日</text> -->
+    <picker header-text="请选择日期" mode="date" value="{{enter_value}}" start="{{enter_start}}" end="{{enter_end}}"
+      bindchange="bindDateChange_enter">
+      <view class="date">
+        {{enter_showDate}}
+      </view>
+    </picker>
+  </view>
+  <view class="center">
+    <view class="duration">{{duration}}晚</view>
+    <image mode="aspectFit" src="../../images/arrow.png"></image>
+  </view>
+  <view class="right">
+    <text class="tit">离店时间</text>
+    <!-- <text class="date">12月29日</text> -->
+    <picker header-text="请选择日期" mode="date" value="{{leave_value}}" start="{{leave_start}}" end="{{leave_end}}"
+      bindchange="bindDateChange_leave">
+      <view class="date">
+        {{leave_showDate}}
+      </view>
+    </picker>
+  </view>
+</view>
