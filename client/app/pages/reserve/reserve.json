@@ -1,3 +1,8 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "recommend":"../../components/recommmend/recommend",
+    "picker-date":"../../components/picker-date/picker-date"
+  },
+  "navigationBarTitleText": "万枫预定"
 }

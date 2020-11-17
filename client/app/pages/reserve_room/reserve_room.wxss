@@ -1,0 +1,88 @@
+.reserve_room{
+  width: 100%;
+  background-color: rgb(240,244,249);
+}
+.title{
+  width: 100%;
+  height: 50px;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  line-height: 50px;
+  box-sizing: border-box;
+  padding: 0 20px ;
+  font-size: 14px;
+  color: #333;
+}
+.room_type{
+  margin-left: 50px;
+  font-weight: bold;
+}
+.picker{
+  width: 100%;
+  height: 75px;
+}
+.tip{
+  width: 100%;
+  height: 82px;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #93969d;
+  padding: 15px 40px;
+  position: relative;
+}
+.tip image{
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+.people_name,
+.room_count{
+  width: 100%;
+  height: 55px;
+  box-sizing: border-box;
+  padding: 0 120px 0 20px;
+  border-bottom: 1px solid #eee;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.change_count{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 112px;
+  height: 100%;
+}
+.reduce,.increase{
+  width: 20px;
+  height: 20px;
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  color: #ddd;
+  font-size: 25px;
+  text-align: center;
+  line-height: 17px;
+}
+.exact_count{
+  width: 30px;
+  font-size: 14px;
+  color: #333;
+}
+.name_input{
+  width: 150px;
+  height: 25px;
+  margin-left: 30px;
+}
+.placeholder{
+  font-size: 12px;
+  color: #aeaeae;
+}
+
+

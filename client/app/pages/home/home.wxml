@@ -41,4 +41,18 @@
     <scroll scrollData="{{center_banner_data}}"></scroll>
   </view>
 
+
+  <!-- 今日推荐 -->
+  <view class="today_recommend">
+    <view class="title">
+      <text class="title_t">今日推荐</text>
+    </view>
+    <view class="recommend_list">
+      <recommend/>
+    </view>
+  </view>
 </view>
+
+
+</view>
+

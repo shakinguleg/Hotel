@@ -1,16 +1,20 @@
 .recommend{
-  width: 730rpx;
+  width: 725rpx;
   height: 98px;
   box-shadow: 0px 0px 5px rgba(134, 134, 134, 0.349019607843137);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 5px 0;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 5px auto;
 }
 .left{
   width: 137px;
   height: 88px;
   box-sizing: border-box;
-  padding: 5px;
+  padding: 0 5px;
 }
 .img{
   width: 137px;

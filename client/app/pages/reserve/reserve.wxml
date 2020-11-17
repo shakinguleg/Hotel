@@ -1,2 +1,51 @@
-<!--app/pages/reserve/reserve.wxml-->
-<text>app/pages/reserve/reserve.wxml</text>
+<view class="reserve">
+  <!-- 轮播图 -->
+  <view class="banner">
+    <swiper class="swiper" indicator-dots="true" indicator-active-color="#eee" autoplay="true" interval="3000">
+      <swiper-item class="swiper_item" wx:for="{{bannerData}}" wx:key="index">
+        <image src="http://10.36.150.18:3000/{{item}}" />
+      </swiper-item>
+    </swiper>
+  </view>
+  <view class="hotel_info">
+    <view class="hotel_name">宏达万枫酒店</view>
+    <view class="share">
+      <image src="../../images/share.png"></image>
+    </view>
+    <view class="label_wrap">
+      <view class="label_item">舒适</view>
+      <view class="label_item">森林院子</view>
+      <view class="label_item">独栋</view>
+      <view class="label_item">私密</view>
+      <view class="label_item">山水之间 </view>
+    </view>
+    <view class="contact">
+      <view>
+        <image src="../../images/navigation.png"></image>
+        <text>一键导航</text>
+      </view>
+      <text>|</text>
+      <view>
+        <image src="../../images/phone.png"></image>
+        <text>联系电话</text>
+      </view>
+
+    </view>
+  </view>
+  <view class="room_and_food">
+    <mp-tabs tabs="{{tabs}}" tab-class="tab_header" tab-underline-color="rgb(76,184,190)" swiper-class="tabs_content">
+      <block wx:for="{{tabs}}" wx:key="title">
+        <view class="content" data-set="{{item}}" slot="tab-content-{{index}}">
+          <picker-date wx:if="{{item.havePicker}}"/>
+          <recommend />
+          <recommend />
+          <recommend />
+          <view class="bottom">
+            人家是有底线的。。。
+          </view>
+        </view>
+      </block>
+    </mp-tabs>
+  </view>
+
+</view>
