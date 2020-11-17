@@ -1,0 +1,8 @@
+<!--components/bottomBar/bottomBar.wxml-->
+<view class="bottom_bar">
+  <view class="bottom_bar_item_wrap" wx:for="{{list}}" wx:key="index" bindtap="goAction"
+    data-goData="{{item.pagePath}}">
+    <image src="{{item.iconPath}}" class="bottom_bar_img" mode="widthFix"></image>
+    <text class="bottom_bar_title">{{item.text}}</text>
+  </view>
+</view>

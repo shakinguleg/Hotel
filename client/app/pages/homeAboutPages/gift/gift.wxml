@@ -1,2 +1,18 @@
 <!--app/pages/gift/gift.wxml-->
+<view class="gift">
+  <!-- 头部展示 -->
+  <view class="gift_top">
+    <view class="center_wrap">
+      <text class="gift_top_money">1256.0</text>
+      <view class="gift_top_info">我的余额(元)</view>
+    </view>
+    <view class="gift_top_text"><text>余额明细</text><text>充值记录</text></view>
+  </view>
+  <!-- 充值专享 -->
+  <view class="recharge"><text>充值专享-升级礼包</text></view>
+  <view class="recharge_wrap">
+    <rechargeItem></rechargeItem>
+  </view>
 
+  <bottomBar></bottomBar>
+</view>

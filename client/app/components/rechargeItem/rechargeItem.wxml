@@ -1,0 +1,6 @@
+<!--components/rechargeItem/rechargeItem.wxml-->
+<view class="rechargeItem">
+  <view class="inner">
+
+  </view>
+</view>
