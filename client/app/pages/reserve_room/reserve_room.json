@@ -1,6 +1,7 @@
 {
   "usingComponents": {
-    "picker-date":"../../components/picker-date/picker-date"
+    "picker-date":"../../components/picker-date/picker-date",
+    "mp-icon": "../../miniprogram_npm/weui-miniprogram/icon/icon"
   },
   "navigationBarTitleText":"客房预订"
 }

@@ -1,2 +1,14 @@
-<!--app/pages/order/order.wxml-->
-<text>app/pages/order/order.wxml</text>
+<view class="order">
+  <mp-tabs
+   tabs="{{tabs}}"
+   tab-class="tabs_style"
+   swiper-class="tabs_content"
+   >
+   <block wx:for="{{tabs}}" wx:key="title">
+      <view class="tab-content" data-set="{{item}}" slot="tab-content-{{index}}" bind:tap="handleClick" >
+        <order />
+        <order />
+      </view>
+    </block>
+  </mp-tabs>
+</view>

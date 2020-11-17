@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "order":"../../components/order/order"
+  },
+  "navigationBarTitleText":"我的订单"
 }

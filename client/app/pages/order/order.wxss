@@ -1,1 +1,16 @@
-/* app/pages/order/order.wxss */
+.order{
+  width: 100%;
+  height: 1000px;
+}
+.tabs_style{
+  width: 93.5px;
+  height: 40px;
+  font-size: 13px;
+  color: #333;
+  text-align: center;
+  line-height: 40px;
+}
+.tabs_content{
+  width: 100%;
+  height: 500px;
+}
