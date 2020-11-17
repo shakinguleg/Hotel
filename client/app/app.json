@@ -1,11 +1,11 @@
 {
-  "entryPagePath": "pages/homeAboutPages/gift/gift",
+ 
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
     "pages/order/order",
     "pages/mine/mine",
-    "pages/reserve_room/reserve_room"
+    "pages/reserve_room/reserve_room",
     "pages/login/login",
     "pages/homeAboutPages/gift/gift",
     "pages/homeAboutPages/pointsMall/pointsMall",

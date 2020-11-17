@@ -42,6 +42,10 @@
         参数：
             openID => 微信小程序返回的用户id
 
+    7. 检查是否注册
+        path："api/user/check"
+        参数：
+            openID => 微信用户id
 ### 轮播图
     1. 获取轮播图
         path："/api/banner/banner"，
