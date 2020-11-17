@@ -1,0 +1,48 @@
+<view class="order_wrap"> 
+  <!-- 头部 -->
+  <view class="header">
+    <!-- 订单类型 -->
+    <text class="order_type">客房订单</text>
+    <!-- 订单状态 -->
+    <text class="order_status" wx:if="{{status === 0}}">已完成</text>
+    <text class="order_status" wx:elif="{{status === 1}}">待付款</text>
+    <text class="order_status" wx:else="{{status === 2}}">已取消</text>
+  </view>
+  <!-- 订单内容 -->
+  <view class="order_content">
+    <view class="left">
+      <image class="image" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3942751454,1089199356&fm=26&gp=0.jpg"></image>
+    </view>
+    <view class="right">
+      <!-- 标题 -->
+      <view class="title">
+        豪华大床房
+      </view>
+      <!-- 价格 -->
+      <view class="price">
+        ￥36.00
+      </view>
+      <!-- 数量 -->
+      <view class="count">
+        1晚
+      </view>
+    </view>
+  </view>
+  <!-- 总价 -->
+  <view class="total_price">
+    <text class="date">2018/12/29  21:30</text>
+    <text class="wenzi">应付金额:</text>
+    <text class="total">￥68</text>
+  </view>
+  <view class="last">
+    <view class="btn pingjia" wx:if="{{status === 0}}">
+      评价
+    </view>
+    <view class="btn yuding" wx:if="{{status === 0 || status === 2}}">
+      再次预定
+    </view>
+    <view class="btn zhifu"  wx:if="{{status === 1}}">
+      立即支付
+    </view>
+  </view>
+</view>
