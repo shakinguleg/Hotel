@@ -1,2 +1,10 @@
-<!--components/scroll/scroll.wxml-->
-<text>components/scroll/scroll.wxml</text>
+<scroll-view class="scroll" scroll-x="true" enable-flex="true" enhanced="true" scroll-into-view="{{scrollItem}}"
+  scroll-with-animation="{{openAnimate}}">
+  <view wx:for="{{scrollData}}" class="scroll_item_wrap" wx:key="id" id="item{{index}}">
+    <view class="text_wrap">
+      <text class="scroll_title">{{item.title}}</text>
+      <text class="scroll_price">{{item.price}}</text>
+    </view>
+    <image src="{{item.imgPath}}" class="scroll_img" mode="widthFix"></image>
+  </view>
+</scroll-view>
