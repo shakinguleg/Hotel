@@ -10,21 +10,34 @@ Page({
     top_banner_data: [],
     aboutData: [{
       imgPath: "../../images/shoutibao.png",
-      text: "专享礼包"
+      text: "专享礼包",
+      goPath: "../homeAboutPages/gift/gift"
     }, {
       imgPath: "../../images/meiriqiandao.png",
-      text: "每日签到"
+      text: "每日签到",
+      goPath: "../homeAboutPages/dailySign/dailySign"
     }, {
       imgPath: "../../images/youhuiquan.png",
-      text: "优惠券"
+      text: "优惠券",
+      goPath: "../homeAboutPages/coupon/coupon"
     }, {
       imgPath: "../../images/wodedingdan.png",
-      text: "订单"
+      text: "我的订单",
+      goPath: "../homeAboutPages/myOrder/myOrder"
     }, {
       imgPath: "../../images/shangchengdingdan.png",
-      text: "商城"
+      text: "积分商城",
+      goPath: "../homeAboutPages/pointsMall/pointsMall"
     }],
     center_banner_data: [],
+  },
+
+  // 方法
+  goAction: (ev) => {
+    wx.navigateTo({
+      url: ev.currentTarget.dataset.action,
+    })
+    console.log(ev);
   },
 
   onLoad: function (options) {

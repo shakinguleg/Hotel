@@ -28,7 +28,7 @@
   </view>
   <!-- 相关入口 -->
   <view class="about">
-    <view class="about_item" wx:for="{{aboutData}}" wx:key="index">
+    <view class="about_item" wx:for="{{aboutData}}" wx:key="index" bindtap="goAction" data-action="{{item.goPath}}">
       <image class="about_img" src="{{item.imgPath}}" mode="widthFix"></image>
       <text class="about_text">{{item.text}}</text>
     </view>
