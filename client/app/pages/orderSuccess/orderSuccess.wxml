@@ -1,0 +1,84 @@
+<!--app/pages/orderSuccess/orderSuccess.wxml-->
+  <view class="bg">
+
+  </view>
+  <view class="con">
+    <view class="img">
+      <image src="../../images/通过.png"></image>
+    </view>
+    <view class="header">
+      <view class="bg-view"></view>
+    <view class="id">
+      <view class="coverId">
+        预订ID HB123456789
+      </view>
+    </view>
+    
+
+    </view>
+    <view class="info">
+      <view class="content">
+        <view class="time">
+          <view class="left">
+            <view class="tit">
+              入住时间
+            </view>
+            <view class="date">
+              2020年11月17日
+            </view>
+            <view class="detail">
+              上午08:00
+            </view>
+          </view>
+          <!-- <view class="img">
+            <image src="../../images/箭头右.png"></image>
+            <image src="../../images/箭头左.png"></image>
+          </view> -->
+          <view class="right">
+            <view class="tit">
+              离开时间
+            </view>
+            <view class="date">
+              2020年11月18日
+            </view>
+            <view class="detail">
+              晚上10:00
+            </view>
+          </view>
+        </view>
+        <view class="room">
+          <view class="tit">
+            豪华大床房
+          </view>
+          <view class="room-num">
+            1个房间
+          </view>
+        </view>
+        <view class="address">
+            <view class="tit">万枫国际五星豪华酒店</view>
+            <view class="add-detail">
+              <mp-icon icon="location" color="#7C3036" size="{{16}}"></mp-icon>
+              <view>成都市天府新区XXXXXXXXXXXXX</view>
+            </view>
+        </view>
+        <view class="userInfo">
+          <view class="left">
+            <view class="tit">
+              客人的名字
+            </view>
+            <view class="_con">
+              陈林强
+            </view>
+          </view>
+          <view class="right">
+            <view class="tit">
+              总金额
+            </view>
+            <view class="price">
+              ￥518
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

@@ -1,0 +1,156 @@
+/* app/pages/orderSuccess/orderSuccess.wxss */
+.bg{
+  background: url("http://10.36.150.18:3000/banner/7.png") center;
+  height: 360rpx;
+  width: 100%;
+}
+.con{
+  width: 90%;
+  height: 88%;
+  position: absolute;
+  top: 20rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+}
+.img{
+  width: 120rpx;
+  height: 120rpx;
+  margin: 0 auto;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+}
+
+.img image{
+  margin: auto;
+  width: 60rpx;
+  height: 60rpx;
+}
+.bg-view{
+  width: 100%;
+  height: 160rpx;
+  background-color: #fff;
+  
+  border-radius: 10rpx;
+  transform-origin: 100% 0;
+  transform: rotate(-10deg);
+  border-top: 1px #ccc solid;
+}
+.header{
+  position: relative;
+}
+.id{
+  position: absolute;
+  top: 0;
+  width: 102%;
+  height: 160rpx;
+  background-color: #fff;
+  transform-origin: 0 0;
+  transform: rotate(10deg);
+  border-radius: 10rpx;
+ border-top: 1px #ccc solid;
+ color: #666;
+}
+.coverId{
+  position: absolute;
+  width: 100%;
+
+  transform-origin: 0 0;
+  transform: rotate(-10deg);
+  top: 60%;
+  text-align: center;
+}
+.info{
+  box-sizing: border-box;
+  width: 100%;
+  position: absolute;
+  top: 280rpx;
+  background-color: #fff;
+  border: 1px #ccc solid;
+
+  padding: 40rpx 0;
+  border-top: none;
+  border-radius: 0 0 20rpx 20rpx;
+}
+.content{
+
+  border-top: 1px #ccc solid;
+}
+.time{
+  box-sizing: border-box;
+  padding: 35rpx 60rpx;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px #ccc solid;
+}
+.time .tit{
+  font-size: 16px;
+  color: #7C3036;
+}
+.time .date{
+  font-size: 14px;
+  color: #333;
+}
+.time .detail{
+  font-size: 14px;
+  color: #666;
+}
+.room{
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 35rpx 60rpx;
+}
+.room .tit{
+  font-size: 16px;
+  color: #7C3036;
+}
+.room{
+  font-size: 14px;
+  color: #666;
+}
+.room view{
+  flex: 1;
+}
+.room-num{
+  box-sizing: border-box;
+  padding-left: 100rpx;
+}
+.address{
+  border-top: 1px #ccc solid;
+  padding: 35rpx 60rpx;
+  text-align: center;
+}
+.add-detail{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.address .tit{
+    font-size: 16px;
+    color: #333;
+}
+.add-detail{
+  font-size: 14px;
+  color: #666;
+}
+.userInfo{
+  border-top: 1px #ccc solid;
+  padding: 35rpx 60rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.userInfo .tit{
+  font-size: 14px;
+  color: #666;
+}
+._con{
+  font-size: 18px;
+  color: #333;
+}
+.userInfo .price{
+  font-size: 18px;
+  color: #7C3036;
+}

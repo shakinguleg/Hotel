@@ -1,5 +1,5 @@
 {
- 
+  "entryPagePath": "pages/orderSuccess/orderSuccess",
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
@@ -11,7 +11,8 @@
     "pages/homeAboutPages/pointsMall/pointsMall",
     "pages/homeAboutPages/coupon/coupon",
     "pages/homeAboutPages/dailySign/dailySign",
-    "pages/homeAboutPages/myOrder/myOrder"
+    "pages/homeAboutPages/myOrder/myOrder",
+    "pages/orderSuccess/orderSuccess"
   ],
   "tabBar": {
     "list": [
