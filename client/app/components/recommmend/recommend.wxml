@@ -19,7 +19,7 @@
       <mp-icon wx:for="{{5-roomInfo.rate}}" wx:key="index" type="field" icon="star" color="grey" size="{{12}}" />
       <text class="score">推荐</text>
     </view>
-    <view class="reserve" bindtap="reserveRoomAction" data-_id="{{roomInfo._id}}" data-title="{{roomInfo.title}}">
+    <view class="reserve" bindtap="reserveRoomAction" data-_id="{{roomInfo._id}}" data-title="{{roomInfo.title}}" data-price="{{roomInfo.price}}">
       预定
     </view>
   </view>

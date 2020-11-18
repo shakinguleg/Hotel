@@ -59,3 +59,23 @@
   display: flex;
   align-items: center;
 }
+
+.recharge_wrap {
+  width: 100%;
+  margin-bottom: 49px;
+  margin-top: 10px;
+  padding: 10px 0;
+  background-color: white;
+}
+
+.recharge_item_wrap {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  border-top: 1px solid #ccc;
+  background-color: white;
+}
+
+.recharge_wrap .recharge_item_wrap:nth-child(1) {
+  border-top: none
+}

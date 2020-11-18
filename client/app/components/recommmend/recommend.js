@@ -11,7 +11,7 @@ Component({
   methods: {
     reserveRoomAction(ev){
       wx.navigateTo({
-        url: `../../pages/reserve_room/reserve_room?_id=${ev.currentTarget.dataset._id}&title=${ev.currentTarget.dataset.title}`,
+        url: `../../pages/reserve_room/reserve_room?room_id=${ev.currentTarget.dataset._id}&title=${ev.currentTarget.dataset.title}&price=${ev.currentTarget.dataset.price}`,
       })
     }
   }

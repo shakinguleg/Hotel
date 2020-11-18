@@ -46,7 +46,6 @@ Page({
   onLoad: function (options) {
     
 
-
     // 获取banner图地址
     wx.request({
       url: BANNER_URL,

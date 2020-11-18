@@ -46,7 +46,7 @@ Component({
    */
   methods: {
     goAction(ev) {
-      console.log(ev);
+      // console.log(ev);
       wx.switchTab({
         url: ev.currentTarget.dataset.godata,
       })

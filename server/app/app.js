@@ -5,6 +5,7 @@ const order = require('../router/orderRouter')
 const food = require('../router/foodRouter')
 const banner = require('../router/bannerRouter')
 const coupon = require('../router/couponRouter')
+const recharge = require('../router/rechargeRouter')
 const app = express()
 
 
@@ -19,5 +20,5 @@ app.use('/api/order',order)
 app.use('/api/food',food)
 app.use('/api/banner',banner)
 app.use('/api/coupon',coupon)
-
+app.use('/api/recharge',recharge)
 module.exports = app

@@ -1,4 +1,4 @@
-<view class="home">
+<scroll-view class="home" scroll-y="true">
   <view class="top_banner">
     <banner circular="true" autoplay="true" swiperData="{{top_banner_data}}" easing="easeInOutCubic">
     </banner>
@@ -51,7 +51,4 @@
       <recommend wx:for="{{roomData}}" wx:key="id" roomInfo="{{item}}" path="{{path}}"/>
     </view>
   </view>
-</view>
-
-
-
+</scroll-view>

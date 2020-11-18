@@ -1,6 +1,16 @@
 <!--components/rechargeItem/rechargeItem.wxml-->
-<view class="rechargeItem">
-  <view class="inner">
-
+<view class="rechargeItem" style="background-color:{{rechargeData.backgroundColor}}">
+  <view class="left">
+    <view class="left_float">
+      <view class="dot"></view>
+      <text>{{rechargeData.member}}</text>
+    </view>
+    <text class="money">{{rechargeData.money}}</text>
+    <text>{{rechargeData.item1}}</text>
+    <text>{{rechargeData.item2}}</text>
+  </view>
+  <view class="right" bindtap="rechargeAction" data-count="{{rechargeData.count}}" data-vip="{{rechargeData.VIPCode}}">
+    <text>立即</text>
+    <text>充值</text>
   </view>
 </view>

@@ -2,11 +2,13 @@
   <!-- 酒店名称与房型 -->
   <view class="title">
     <text class="hotel_name">宏达万枫酒店</text>
-    <text class="room_type">豪华大床房</text>
+    <text class="room_type">{{roomType}}</text>
   </view>
   <!-- 选择入住时间段 -->
   <view class="picker">
-    <picker-date />
+    <picker-date class="picker-date"
+     bindgetStartDateAction="getStartDateAction"
+     bindgetEndDateAction="getEndDateAction"/>
   </view>
   <!-- 提示信息 -->
   <view class="tip">
@@ -18,7 +20,7 @@
     <text>预定间数</text>
     <view class="change_count">
       <view class="reduce" bindtap="reduceAction">-</view>
-      <view class="exact_count">{{room_count}}间</view>
+      <view class="exact_count">{{count}}间</view>
       <view class="increase" bindtap="increaseAction">+</view>
     </view>
   </view>
@@ -47,8 +49,8 @@
   </view>
   <!-- 留言 -->
   <view class="remark">
-    <textarea class="remark_content" value="{{remark}}" placeholder="留言不多于30个汉字" placeholder-class="textarea" hold-keyboard="true"
-      maxlength="30" />
+    <textarea class="remark_content" value="{{message}}" placeholder="留言不多于30个汉字" placeholder-class="textarea" hold-keyboard="true"
+      maxlength="30" bindinput="messageChangeAction"/>
     </view>
   <!-- 选择支付方式 -->
   <view class="payment_method">
@@ -68,12 +70,27 @@
   <!-- 结算 -->
   <view class="settlement">
     <text class="zhifu">需支付</text>
-    <text class="price">￥598.00</text>
+    <text class="price">￥{{allPrice}}.00</text>
     <view class="detail">
       <text>明细</text>
     </view>
-    <view class="submit">
+    <view class="submit" bindtap="submitOrder">
       提交订单
+    </view>
+  </view>
+</view>
+<view class="pay_wrap">
+  <view class="pay_modal">
+    <view class="pay_top">
+      <view class="close">
+        <mp-icon icon="close" />
+      </view>
+      <view class="use_password">
+        使用密码
+      </view>
+    </view>
+    <view class="pay_bottom">
+
     </view>
   </view>
 </view>
