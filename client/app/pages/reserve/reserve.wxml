@@ -37,9 +37,7 @@
       <block wx:for="{{tabs}}" wx:key="title">
         <view class="content" data-set="{{item}}" slot="tab-content-{{index}}">
           <picker-date wx:if="{{item.havePicker}}"/>
-          <recommend />
-          <recommend />
-          <recommend />
+          <recommend wx:for="{{roomData}}" wx:key="id" wx:for-item="singalRoom" roomInfo="{{singalRoom}}" path="{{path}}"/>
           <view class="bottom">
             人家是有底线的。。。
           </view>
@@ -47,5 +45,4 @@
       </block>
     </mp-tabs>
   </view>
-
 </view>

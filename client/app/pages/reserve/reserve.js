@@ -1,26 +1,34 @@
 Page({
   data: {
-    bannerData:'',
-    tabs:[]
+    bannerData:[],
+    tabs:[{
+      title:"客房预定",
+      havePicker:true
+    },
+    {
+      title:"餐饮预定",
+      havePicker:false
+    }],
+    path:'',
+    roomData:[],
+
   },
 
   onLoad: function (options) {
+    this.setData({path:getApp().data.path});
+    // 请求banner数据
     wx.request({
       url: 'http://10.36.150.18:3000/api/banner/banner?type=roomDetail',
       success:(res)=>{
         this.setData({bannerData:res.data.data[0].image});
       }
     });
-    const tabs = [
-      {
-        title:"客房预定",
-        havePicker:true
-      },
-      {
-        title:"餐饮预定",
-        havePicker:false
+    // 请求客房数据
+    wx.request({
+      url: `${this.data.path}api/room/allRoom`,
+      success:(res)=>{
+        this.setData({roomData:res.data.data})
       }
-    ];
-    this.setData({tabs:tabs});
+    })
   },
 })

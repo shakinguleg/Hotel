@@ -1,28 +1,25 @@
 <view class="recommend">
   <view class="left">
-    <image class="img" src="https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3942751454,1089199356&fm=26&gp=0.jpg"
+    <image class="img"
+      src="{{path + roomInfo.cover}}"
       mode="aspectFill" />
   </view>
   <view class="right">
     <view class="title">
-      豪华大床房-赠双人套餐
+      {{roomInfo.title}}
     </view>
     <view class="label_wrap">
-      <view class="label_item">舒适</view>
-      <view class="label_item">地暖</view>
-      <view class="label_item">温泉</view>
+      <view wx:for="{{roomInfo.tag}}" wx:key="index" class="label_item">{{item}}</view>
     </view>
     <view class="price">
-      ￥598.00
+      ￥{{roomInfo.price}}.00
     </view>
     <view>
-      <!-- <mp-icon wx:for="{{5}}" wx:key="index" type="field" icon="star" color="red" size="{{12}}"/> -->
-
-      <mp-icon wx:for="{{rate}}" wx:key="index" type="field" icon="star" color="red" size="{{12}}"/>
-      <mp-icon wx:for="{{5-rate}}" wx:key="index" type="field" icon="star" color="grey" size="{{12}}"/>
+      <mp-icon wx:for="{{roomInfo.rate-0}}" wx:key="index" type="field" icon="star" color="red" size="{{12}}" />
+      <mp-icon wx:for="{{5-roomInfo.rate}}" wx:key="index" type="field" icon="star" color="grey" size="{{12}}" />
       <text class="score">推荐</text>
     </view>
-    <view class="reserve" bindtap="reserveAction">
+    <view class="reserve" bindtap="reserveRoomAction" data-_id="{{roomInfo._id}}" data-title="{{roomInfo.title}}">
       预定
     </view>
   </view>

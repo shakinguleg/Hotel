@@ -26,6 +26,8 @@ Page({
     this.setData({payment_method:ev.detail.value})
   },
   data: {
+    _id:null,
+    rooType:'',
     room_count:1,
     name_value:'',
     phoneNumber:'',
