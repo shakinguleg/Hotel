@@ -5,7 +5,7 @@ const { formatDate } = require("clq-util");
 router.post("/add", async (req, res) => {
   //注册
   const {limit,price,start,end}  = req.body
-  console.log('req.body: ', req.body);
+  
   await Coupon.create({
     time: Date.now(),
     limit,
