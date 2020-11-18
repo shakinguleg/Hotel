@@ -30,7 +30,7 @@ router.post('/addOrder',async (req,res)=>{
 })
 router.post('/updateState',async (req,res)=>{
     const {orderId,state} = req.body
-    console.log('req.body: ', req.body);
+    
 
   const data =   await  Order.findByIdAndUpdate(orderId,{state:state})
     res.json({

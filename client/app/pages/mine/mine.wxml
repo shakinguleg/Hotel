@@ -13,7 +13,7 @@
       <view class="right">
         <view class="vip">
           <text>{{user.vip}}</text>
-          <image src="../../images/勋章.png"></image>
+          <image src="../../images/moedal.png"></image>
         </view>
       </view>
     </view>
@@ -47,7 +47,7 @@
 <view class="tab">
     <view class="tab-item">
       <view class="left">
-        <image src="../../images/订单 (1).png"></image>
+        <image src="../../images/order.png"></image>
         <text>我的订单</text>
       </view>
       <view class="right">
@@ -56,7 +56,7 @@
     </view>
     <view class="tab-item">
       <view class="left">
-        <image src="../../images/会员.png"></image>
+        <image src="../../images/vip.png"></image>
         <text>我的会员</text>
       </view>
       <view class="right">
@@ -65,7 +65,7 @@
     </view>
     <view class="tab-item">
       <view class="left">
-        <image src="../../images/金币.png"></image>
+        <image src="../../images/money.png"></image>
         <text>我的服务券</text>
       </view>
       <view class="right">
@@ -75,7 +75,7 @@
   
     <view class="tab-item">
       <view class="left">
-        <image src="../../images/优惠券.png"></image>
+        <image src="../../images/coupen.png"></image>
         <text>我的优惠券</text>
       </view>
       <view class="right">
@@ -84,7 +84,7 @@
     </view>
     <view class="tab-item">
       <view class="left">
-        <image src="../../images/礼包.png"></image>
+        <image src="../../images/gift.png"></image>
         <text>我的活动</text>
       </view>
       <view class="right">

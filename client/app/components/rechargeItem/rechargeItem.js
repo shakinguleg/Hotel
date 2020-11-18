@@ -46,9 +46,11 @@ Component({
         },
         success: (ev) => {
           // 点击充值结果
+
           if (ev.data.code === 1) {
             getApp().data.user = ev.data.data
           }
+
 
         }
       })

@@ -32,8 +32,10 @@
     "userConfirmedUseCompilerModuleSwitch": false,
     "packNpmManually": false,
     "packNpmRelationList": [],
+
     "minifyWXSS": true,
     "bundle": false
+
   },
   "appid": "wxb0134db18df3467d",
   "projectname": "client",
@@ -59,8 +61,24 @@
           "query": ""
         },
         {
+
           "name": "pages/reserve_room/reserve_room",
           "pathName": "pages/reserve_room/reserve_room",
+
+          "id": -1,
+          
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/detail/detail",
+          "pathName": "pages/detail/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/home/home",
+          "pathName": "pages/home/home",
           "scene": null
         }
       ]
