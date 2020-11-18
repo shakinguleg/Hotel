@@ -3,6 +3,26 @@ const User = require('../modle/user')
 const Coupon = require('../modle/coupon')
 const router = new Router();
 const {formatDate} = require('clq-util')
+function toggleVip(user){
+  
+    switch (user.VIPCode) {
+        case 0:
+            user.vip = "普通会员"
+            break;
+        case 1:
+            user.vip = "青铜会员"
+            break;
+        case 2:
+            user.vip = "白银会员"
+            break;
+        case 3:
+            user.vip = "黄金会员"
+            break;
+        default:
+            user.vip = "普通会员"
+            break;
+    }
+}
 router.post('/register',async (req,res)=>{//注册
     const {openID} = req.body
     
@@ -13,7 +33,8 @@ router.post('/register',async (req,res)=>{//注册
             msg:'用户名重复'
         })
     }else{
-    let newUser =  await User.create({...req.body,time:formatDate("Y-M-D H-M-S")})
+    let newUser =  await User.create({...req.body,time:formatDate("Y-M-D H-M-S")}).lean()
+    toggleVip(newUser)
         res.json({
             code:0,
             msg:'注册成功',
@@ -23,8 +44,8 @@ router.post('/register',async (req,res)=>{//注册
 })
 router.get('/check',async (req,res)=> {
     const {openID} = req.query;
-    const data = await User.findOne({openID})
-    
+    const data = await User.findOne({openID}).lean()
+    toggleVip(data)
     if(data){
         res.json({
             code:1,
@@ -64,15 +85,35 @@ router.post('/useCoupon',async (req,res)=>{
     })
 })
 router.post("/recharge" , async (req,res)=>{
-    const {count,openID} = req.body;
-    const result = await User.find({openID})
-    
+    let {count,openID,VIPCode} = req.body;
+    VIPCode = parseInt(VIPCode)
+    console.log('VIPCode: ', VIPCode);
+    const result = await User.findOne({openID})
+    console.log('result: ', result);
+    console.log('result: ', result.VIPCode);
+    User.findOneAndUpdate
     if(result){
-        await User.updateOne({openID},{money:result[0].money + count*1})
+        if(VIPCode > result.VIPCode){
+            let newRes =   await User.findOneAndUpdate({openID},{money:result.money + count*1,VIPCode:VIPCode*1},{new:true}).lean()
+            toggleVip(newRes)
         res.json({
             code:1,
-            msg:"ok"
+            msg:"ok",
+            data:newRes
         })
+        }else{
+            console.log(1234645)
+         let newRes =    await User.findOneAndUpdate({openID},{money:result.money + count*1},{new:true}).lean()
+        //  console.log('newRes: ', newRes);
+         toggleVip(newRes)
+        res.json({
+            code:1,
+            msg:"ok",
+            data:newRes
+        })
+        }
+        
+      
     }else{
         res.json({
             code:0,

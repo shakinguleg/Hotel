@@ -6,7 +6,7 @@
 }
 .con{
   width: 90%;
-  height: 88%;
+  height: 90%;
   position: absolute;
   top: 20rpx;
   left: 50%;
@@ -79,7 +79,7 @@
 }
 .time{
   box-sizing: border-box;
-  padding: 35rpx 60rpx;
+  padding: 30rpx 60rpx;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -101,7 +101,7 @@
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
-  padding: 35rpx 60rpx;
+  padding: 30rpx 60rpx;
 }
 .room .tit{
   font-size: 16px;
@@ -120,7 +120,7 @@
 }
 .address{
   border-top: 1px #ccc solid;
-  padding: 35rpx 60rpx;
+  padding: 30rpx 60rpx;
   text-align: center;
 }
 .add-detail{
@@ -138,7 +138,7 @@
 }
 .userInfo{
   border-top: 1px #ccc solid;
-  padding: 35rpx 60rpx;
+  padding: 30rpx 60rpx;
   display: flex;
   justify-content: space-between;
 }

@@ -34,7 +34,8 @@
         方法：post
         参数：
             openID => 微信小程序返回的用户id
-            count => 充值数量
+            count => 充值数量,
+            VIPCode => 充值会员编码
     
     6. 获取用户信息
         path: "api/user/userInfo"
@@ -112,4 +113,7 @@
             roomId => 房间_id
 
 
-    
+### 充值券
+    1. 获取所有充值券
+        path："/api/recharge/allRecharge"，
+        方法：get

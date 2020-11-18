@@ -28,7 +28,7 @@ Page({
           },
           dataType:"json",
           success:(res3)=>{
-            getApp().data.user = res3.data.data
+            getApp().setUser(res3.data.data)
             wx.switchTab({
               url: '../home/home',
             })
