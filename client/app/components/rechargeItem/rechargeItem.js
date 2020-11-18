@@ -47,6 +47,7 @@ Component({
         success: (ev) => {
           // 点击充值结果
           // console.log(ev);
+          getApp().setUser(ev.data.data)
         }
       })
     }
