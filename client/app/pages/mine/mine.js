@@ -1,4 +1,5 @@
 // app/pages/mine/mine.js
+import SetUser from '../../plugin/setUser'
 Page({
 
   /**
@@ -7,14 +8,16 @@ Page({
   data: {
     user:{}
   },
-
+  // setUser(user){
+  //   this.setData({
+  //     user:user
+  //   })
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) { 
-    this.setData({
-      user:getApp().data.user
-    })   
+  SetUser.apply(this)
   },
 
   /**
@@ -28,7 +31,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+ 
   },
 
   /**
@@ -42,7 +45,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+      SetUser = null
   },
 
   /**

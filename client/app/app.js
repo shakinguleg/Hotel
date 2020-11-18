@@ -1,7 +1,12 @@
 //app.js
+import Pubsub from './plugin/pubsub'
 App({
   data:{
       path:"http://10.36.150.18:3000/"
+  },
+  setUser(user){
+    this.data.user = user
+    Pubsub.publish('user',user)
   },
   onLaunch: function () {
     
@@ -32,7 +37,8 @@ App({
               url: '/pages/login/login',
             })
           }else{
-            this.data.user = res2.data.data
+            // this.data.user = res2.data.data
+            this.setUser(res2.data.data)
           }
           
         }

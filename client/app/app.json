@@ -1,5 +1,7 @@
 {
-  "entryPagePath": "pages/homeAboutPages/gift/gift",
+
+
+
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
