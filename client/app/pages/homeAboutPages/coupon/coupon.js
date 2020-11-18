@@ -37,6 +37,7 @@ Page({
       },
     ],
     activeIndex: 0
+
   },
 
   /**
