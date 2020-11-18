@@ -1,1 +1,45 @@
 /* app/pages/homeAboutPages/coupon/coupon.wxss */
+.coupon {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper_wrap {
+  height: calc(100vh - 49px) !important;
+}
+
+/* 内部嵌套的scroll-view的样式 */
+.tab-content {
+  width: 100%;
+  height: 100%;
+  background-color: #eee;
+}
+
+/* tabs每一项样式 */
+.weui-tabs-bar__item {
+  width: 25%;
+  height: 38px;
+  line-height: 36px;
+  padding: 0 4px;
+  box-sizing: border-box;
+}
+
+.weui-tabs-bar__title {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background-color: white;
+  text-align: center;
+}
+
+.weui-tabs-bar__title text {
+  font-size: 13px;
+}
+
+.tabClass {
+  width: 100%;
+}
+
+.swiper {
+  height: calc(100vh - 87px) !important;
+}
