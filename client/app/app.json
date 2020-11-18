@@ -1,5 +1,7 @@
 {
-"entryPagePath": "pages/mine/mine",
+
+
+
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
