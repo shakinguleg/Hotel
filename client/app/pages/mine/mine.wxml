@@ -12,7 +12,7 @@
       </view>
       <view class="right">
         <view class="vip">
-          <text>白银会员</text>
+          <text>{{user.vip}}</text>
           <image src="../../images/勋章.png"></image>
         </view>
       </view>

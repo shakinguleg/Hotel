@@ -39,5 +39,9 @@ module.exports = model('user',{
     time:{
         type:String,
         required:true
+    },
+    VIPCode:{
+        type:Number,
+        default:0
     }
 })
