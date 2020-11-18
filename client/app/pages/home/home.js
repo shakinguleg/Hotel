@@ -30,6 +30,9 @@ Page({
       goPath: "../homeAboutPages/pointsMall/pointsMall"
     }],
     center_banner_data: [],
+    // 今日推荐房间数据
+    roomData:[],
+    path:''
   },
 
   // 方法
@@ -96,6 +99,16 @@ Page({
           })
         }
 
+      }
+    })
+    // 请求首页今日推荐房间数据
+    const App = getApp();
+    
+    this.setData({path:App.data.path});
+    wx.request({
+      url: App.data.path+'api/room/allRoom',
+      success:(res)=>{
+        this.setData({roomData:res.data.data});
       }
     })
   },

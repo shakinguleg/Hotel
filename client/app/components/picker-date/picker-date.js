@@ -6,7 +6,6 @@ let end = (date.getFullYear() + 1) + '-' + (date.getMonth() + 1) + '-' + date.ge
 Component({
 
   properties: {
-
   },
 
   data: {
@@ -29,6 +28,7 @@ Component({
       this.setData({
         enter_value: ev.detail.value
       });
+
     },
     bindDateChange_leave(ev){
       this.setData({
@@ -68,10 +68,12 @@ Component({
     'enter_value': function () {
       this.formatShowDate();
       this.calcDuration();
+      this.triggerEvent('getStartDateAction',this.data.enter_showDate);
     },
     'leave_value':function(){
       this.formatShowDate_leave();
       this.calcDuration();
+      this.triggerEvent('getEndDateAction',this.data.leave_showDate);
     }
   }
 })

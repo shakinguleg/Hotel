@@ -48,7 +48,7 @@
       <view class="title_t">今日推荐</view>
     </view>
     <view class="recommend_list">
-      <recommend />
+      <recommend wx:for="{{roomData}}" wx:key="id" roomInfo="{{item}}" path="{{path}}"/>
     </view>
   </view>
 </scroll-view>
