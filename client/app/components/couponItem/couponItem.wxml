@@ -1,2 +1,18 @@
 <!--components/couponItem/couponItem.wxml-->
-<text>components/couponItem/couponItem.wxml</text>
+<view class="couponItem">
+  <view class="left">
+    <text class="left_title">万枫酒店优惠券</text>
+    <view class="text_wrap">
+      <text>￥</text>
+      <text class="left_price">50</text>
+      <text class="left_con">满299元减50元</text>
+    </view>
+    <view class="img" style="background-image: url('../../images/juchi-noused.png')">
+    </view>
+  </view>
+  <view class="right">
+    <text class="right_title">使用期限</text>
+    <text class="right_time">2015.11.10 00:00</text>
+    <text class="right_time">2015.12.10 00:00</text>
+  </view>
+</view>

@@ -4,17 +4,6 @@
   height: 100%;
 }
 
-.swiper_wrap {
-  height: calc(100vh - 49px) !important;
-}
-
-/* 内部嵌套的scroll-view的样式 */
-.tab-content {
-  width: 100%;
-  height: 100%;
-  background-color: #eee;
-}
-
 /* tabs每一项样式 */
 .weui-tabs-bar__item {
   width: 25%;
@@ -40,6 +29,21 @@
   width: 100%;
 }
 
-.swiper {
+/* tabs组件中swiper样式 */
+.swiper_class {
   height: calc(100vh - 87px) !important;
+
+}
+
+/* 内部嵌套的scroll-view的样式 */
+.tab-content {
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: #eee;
+}
+
+.couponItem_wrap {
+  padding-bottom: 10px;
 }

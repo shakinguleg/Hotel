@@ -12,30 +12,30 @@ Component({
     list: [{
         "pagePath": "/pages/home/home",
         "text": "首页",
-        "iconPath": "/images/首页-选中 (1).png",
-        "unSelectedIconPath": "/images/首页-选中 (1).png",
-        "selectedIconPath": "/images/首页-选中.png"
+        "iconPath": "/images/home.png",
+        "unSelectedIconPath": "/images/home.png",
+        "selectedIconPath": "/images/home-s.png"
       },
       {
         "pagePath": "/pages/reserve/reserve",
         "text": "预定",
-        "selectedIconPath": "../../images/钱包.png",
-        "unSelectedIconPath": "../../images/钱包 (1).png",
-        "iconPath": "../../images/钱包 (1).png"
+        "selectedIconPath": "../../images/reserve-s.png",
+        "unSelectedIconPath": "../../images/reserve.png",
+        "iconPath": "../../images/reserve.png"
       },
       {
         "pagePath": "/pages/order/order",
         "text": "订单",
-        "selectedIconPath": "../../images/订单.png",
-        "unSelectedIconPath": "../../images/订单 (1).png",
-        "iconPath": "../../images/订单 (1).png"
+        "selectedIconPath": "../../images/order-s.png",
+        "unSelectedIconPath": "../../images/order.png",
+        "iconPath": "../../images/order.png"
       },
       {
         "pagePath": "/pages/mine/mine",
         "text": "个人中心",
-        "selectedIconPath": "../../images/钻石.png",
-        "unSelectedIconPath": "../../images/钻石 (1).png",
-        "iconPath": "../../images/钻石 (1).png"
+        "selectedIconPath": "../../images/mine-s.png",
+        "unSelectedIconPath": "../../images/mine.png",
+        "iconPath": "../../images/mine.png"
       }
     ],
     currentPath: ""
