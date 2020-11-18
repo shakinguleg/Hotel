@@ -3,7 +3,7 @@
   <!-- 头部展示 -->
   <view class="gift_top">
     <view class="center_wrap">
-      <text class="gift_top_money">1256.0</text>
+      <text class="gift_top_money">{{totalMoney}}</text>
       <view class="gift_top_info">我的余额(元)</view>
     </view>
     <view class="gift_top_text"><text>余额明细</text><text>充值记录</text></view>

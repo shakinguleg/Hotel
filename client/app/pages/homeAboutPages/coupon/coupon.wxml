@@ -1,2 +1,14 @@
 <!--app/pages/homeAboutPages/coupon/coupon.wxml-->
-<text>app/pages/homeAboutPages/coupon/coupon.wxml</text>
+<view class="coupon">
+  <view class="swiper_wrap">
+    <mp-tabs tabs="{{tabs}}" tab-class="tabClass" activeTab="{{activeIndex}}" swiperClass="swiper"
+      tab-underline-color="#CCCC00">
+      <block wx:for="{{tabs}}" wx:key="title">
+        <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true">
+
+        </scroll-view>
+      </block>
+    </mp-tabs>
+  </view>
+  <bottomBar></bottomBar>
+</view>
