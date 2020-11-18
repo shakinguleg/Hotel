@@ -205,3 +205,19 @@
   text-align: center;
   line-height: 45px;
 }
+.pay_wrap{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.pay_modal{
+  width: 548rpx;
+  height: 238rpx;
+  background-color: #fff;
+}

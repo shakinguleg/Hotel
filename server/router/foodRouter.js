@@ -5,7 +5,7 @@ const { formatDate } = require("clq-util");
 router.post("/add", async (req, res) => {
   //注册
   const {cover,price,title}  = req.body
-  console.log('req.body: ', req.body);
+  
   await Food.create({
     tag: ["海鲜", "粤菜", "湘菜"],
     rate:5.0,

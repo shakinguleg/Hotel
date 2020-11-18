@@ -12,7 +12,8 @@
     "pages/homeAboutPages/coupon/coupon",
     "pages/homeAboutPages/dailySign/dailySign",
     "pages/homeAboutPages/myOrder/myOrder",
-    "pages/orderSuccess/orderSuccess"
+    "pages/orderSuccess/orderSuccess",
+    "pages/detail/detail"
   ],
   "tabBar": {
     "color": "#333",

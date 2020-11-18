@@ -1,17 +1,17 @@
 Component({
 
   properties: {
-    data:Object
+    roomInfo:Object,
+    path:String
   },
 
   data: {
-    rate:4
   },
 
   methods: {
-    reserveAction(){
+    reserveRoomAction(ev){
       wx.navigateTo({
-        url: '../../pages/reserve_room/reserve_room',
+        url: `../../pages/reserve_room/reserve_room?room_id=${ev.currentTarget.dataset._id}&title=${ev.currentTarget.dataset.title}&price=${ev.currentTarget.dataset.price}`,
       })
     }
   }

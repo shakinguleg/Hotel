@@ -59,7 +59,8 @@ router.get('/check',async (req,res)=> {
 })
 router.post('/getCoupon',async (req,res)=>{
     const {openID,couponId} = req.body
-    await User.updateOne({openID},{$push:{coupon:couponId}}),
+   let res2 =  await User.updateOne({openID},{$push:{coupon:couponId}});
+   
     res.json({
         code:1,
         mag:"ok"
@@ -67,7 +68,7 @@ router.post('/getCoupon',async (req,res)=>{
 })
 router.get('/allCoupon',async (req,res)=>{
     const {openID} = req.query
-  let result =   await User.find({openID}).populate(['coupon']).populate('usedCoupon')
+  let result =   await User.find({openID},{coupon:true,usedCoupon:true}).populate(['coupon']).populate('usedCoupon')
     res.json({
         code:1,
         data:result
@@ -87,10 +88,10 @@ router.post('/useCoupon',async (req,res)=>{
 router.post("/recharge" , async (req,res)=>{
     let {count,openID,VIPCode} = req.body;
     VIPCode = parseInt(VIPCode)
-    console.log('VIPCode: ', VIPCode);
+    
     const result = await User.findOne({openID})
-    console.log('result: ', result);
-    console.log('result: ', result.VIPCode);
+    
+    
     User.findOneAndUpdate
     if(result){
         if(VIPCode > result.VIPCode){
@@ -102,9 +103,9 @@ router.post("/recharge" , async (req,res)=>{
             data:newRes
         })
         }else{
-            console.log(1234645)
+            
          let newRes =    await User.findOneAndUpdate({openID},{money:result.money + count*1},{new:true}).lean()
-        //  console.log('newRes: ', newRes);
+        //  
          toggleVip(newRes)
         res.json({
             code:1,

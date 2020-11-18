@@ -1,0 +1,103 @@
+<!--app/pages/detail/detail.wxml-->
+<swiper circular="true" autoplay="true" class="swiper">
+  <swiper-item wx:for="{{room.image}}" class="img-item" wx:key="index">
+    <view class="img-wrap">
+      <image src="{{item}}" class="img"></image>
+    </view>
+  </swiper-item>
+</swiper>
+
+<view class="tit">
+  <view class="header">
+    {{room.title}}
+  </view>
+  <view class="tag">
+    <text class="tag-item" wx:for="{{room.tag}}" wx:key="index">{{item}}</text>
+  </view>
+  <view class="bottom">
+    <view class="bottom-left">
+      ￥{{room.price}}.00
+    </view>
+    <view class="bottom-right">
+      <view class="bottom-btn">
+        预订
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="info">
+  <view class="info-tit">房型信息</view>
+  <view class="info-con">
+    <view class="info-item" wx:for="{{room.info}}" wx:key="index">
+      <view class="item-tag" wx:for="{{item}}" wx:for-item="info" wx:for-index="i" wx:key="i">{{info}}</view>
+    </view>
+  </view>
+</view>
+
+<view class="server">
+  <view class="info-tit">房型信息</view>
+  <view class="server-info">
+    <view class="server-item" wx:for="{{server}}" wx:key="index">
+      <image src="{{item.src}}" class="server-img"></image>
+      <text>{{item.con}}</text>
+    </view>
+  </view>
+</view>
+
+<view class="rate">
+    <view class="rate-tit">评论及评价</view>
+    <view class="rate-info">
+      <view class="rate-left">
+        <text class="num">5.0</text>
+        <text>满分5分</text>
+      </view>
+      <view class="rate-right">
+        <view class="rate-right-l">
+          <view class="star">
+            <image  wx:key="index"  wx:for="{{5}}" src="../../images/star.png"></image>
+          </view>
+          <view class="star">
+            <image   wx:key="index" src="../../images/star.png" wx:for="{{4}}"></image>
+          </view>
+          <view class="star">
+            <image   wx:key="index" src="../../images/star.png" wx:for="{{3}}"></image>
+          </view>
+          <view class="star">
+            <image   wx:key="index"  src="../../images/star.png" wx:for="{{2}}"></image>
+          </view>
+          <view class="star">
+            <image   wx:key="index" src="../../images/star.png" wx:for="{{1}}"></image>
+          </view>
+        </view>
+        <view class="rate-right-r">
+          <view class="line"></view>
+          <view class="line"></view>
+          <view class="line"></view>
+          <view class="line"></view>
+          <view class="line"></view>
+        </view>
+      </view>
+    </view>
+</view>
+
+<view class="comment">
+    <view class="comment-item" wx:for="{{4}}" wx:key="index">
+      <view class="comment-left">
+        
+        <image class="avatar" src="http://www.axshare.cn/gsc/EJ7I57/f0/b1/cf/f0b1cf8a0a0449dea4117438472f3b9f/images/%E6%A1%86%E6%9E%B6/u1322.jpg?token=f3674c9aa437702572d396ef481f1f5dc62c656dc94392ce7a4670910721d256"></image>
+      </view>
+      <view class="comment-right">
+        <view class="commont-top">
+          <text class="nickname">半夏</text>
+          <view class="star">
+            <image  wx:key="index"  wx:for="{{5}}" src="../../images/star.png"></image>
+          </view>
+        </view>
+        <view class="commont-con">
+          发生的方式发生的方式发送到发送到发送到发送到
+        </view>
+      </view>
+    </view>
+</view>
+

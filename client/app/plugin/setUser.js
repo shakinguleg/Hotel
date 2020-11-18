@@ -1,16 +1,18 @@
 import Pubsub from './pubsub'
-export default function() {
+export default function(cb) {
   if(getApp().data.user){
-    this.setData({
-      user:getApp().data.user
-    })
-  }else{
-  let id = Pubsub.subscribe('user',(user)=>{
+    cb?cb(getApp().data.user):this.setData({user:getApp().data.user})
+    return cb?Pubsub.subscribe('user',cb):Pubsub.subscribe('user',(user)=>{
       this.setData({
         user:user
       })
     })
-    console.log(id);
-    
+  }else{
+    return cb?Pubsub.subscribe('user',cb):Pubsub.subscribe('user',(user)=>{
+      this.setData({
+        user:user
+      })
+    })
+
   }
 }

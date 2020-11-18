@@ -12,7 +12,7 @@
   </view>
   <view class="center">
     <view class="duration">{{duration}}晚</view>
-    <image mode="aspectFit" src="../../images/arrow.png"></image>
+    <image class="image" mode="aspectFit" src="../../images/arrow.png"></image>
   </view>
   <view class="right">
     <text class="tit">离店时间</text>

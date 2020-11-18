@@ -6,7 +6,15 @@
   align-items: center;
   background-color: #fff;
 }
-.left,.right{
+.left{
+  width: 100px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+.right{
   width: 100px;
   height: 100%;
   display: flex;
@@ -33,7 +41,7 @@
   padding-top: 5px;
   padding-bottom: 20px;
 }
-.center image{
+.center .image{
   width: 125px;
   height: 20px;
 }
