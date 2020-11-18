@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "mp-tabs": "@miniprogram-component-plus/tabs",
+    "bottomBar": "../../../components/bottomBar/bottomBar",
+    "couponItem": "../../../components/couponItem/couponItem"
+  }
 }

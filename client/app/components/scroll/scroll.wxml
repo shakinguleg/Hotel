@@ -1,5 +1,5 @@
-<scroll-view class="scroll" scroll-x="true" enable-flex="true" enhanced="true" scroll-into-view="{{scrollItem}}"
-  scroll-with-animation="{{openAnimate}}">
+<scroll-view class="scroll_view" scroll-x="true" enable-flex="true" enhanced="true" scroll-into-view="{{}}"
+  show-scrollbar="false" scroll-with-animation="{{openAnimate}}">
   <view wx:for="{{scrollData}}" class="scroll_item_wrap" wx:key="scroll" id="item{{index}}">
     <view class="text_wrap">
       <text class="scroll_title">{{item.title}}</text>

@@ -5,16 +5,16 @@ Page({
    * 页面的初始数据
    */
   data: {
-    user:{}
+    user: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) { 
+  onLoad: function (options) {
     this.setData({
-      user:getApp().data.user
-    })   
+      user: getApp().data.user
+    })
   },
 
   /**
@@ -28,7 +28,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      user: getApp().data.user
+    })
   },
 
   /**

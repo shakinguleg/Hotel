@@ -1,7 +1,6 @@
 /* components/scroll/scroll.wxss */
-.scroll {
+.scroll_view {
   width: 750rpx;
-  height: 60px;
   display: flex;
   background-color: white;
 }
@@ -9,6 +8,7 @@
 .scroll_item_wrap {
   background-color: white;
   position: relative;
+  height: max-content;
 }
 
 .text_wrap {
@@ -39,7 +39,7 @@
 .scroll_img {
   /* width: 50rpx; */
   width: 230rpx;
-  border-radius: 10px;
+  border-radius: 10rpx;
   overflow: hidden;
   margin: 0 10rpx;
 }
