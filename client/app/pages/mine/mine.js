@@ -13,7 +13,7 @@ Page({
   
   */
    onLoad: function (options) { 
-  SetUser.call(this) 
+      SetUser.call(this) 
   },
 
   /**
