@@ -1,5 +1,5 @@
 {
-  "entryPagePath": "pages/homeAboutPages/coupon/coupon",
+  "entryPagePath": "pages/reserve_room/reserve_room",
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",
