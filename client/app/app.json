@@ -1,5 +1,4 @@
 {
-  "entryPagePath": "pages/homeAboutPages/coupon/coupon",
   "pages": [
     "pages/home/home",
     "pages/reserve/reserve",

@@ -61,7 +61,7 @@
         <label class="label" for="{{item.value}}">
           <image class="{{item.imageClass}}" src="{{item.image}}"></image>
           <text>{{item.title}}</text>
-          <radio value="{{item.value}}" checked="true" id="{{item.value}}"/>
+          <radio value="{{item.value}}" checked="{{item.checked}}" id="{{item.value}}"/>
         </label>
       </view>
     </radio-group>
@@ -69,12 +69,12 @@
   <!-- 结算 -->
   <view class="settlement">
     <text class="zhifu">需支付</text>
-    <text class="price">￥{{allPrice}}.00</text>
+    <text class="price">￥{{allPrice}}</text>
     <view class="detail">
       <text>折扣:</text>
-        <text wx:if="{{vip_level === 1}}">9折</text>
-        <text wx:if="{{vip_level == 2}}">8折</text>
-        <text wx:if="{{vip_level == 3}}">7折</text>
+        <text wx:if="{{vip_level === 1}}">9.5折</text>
+        <text wx:if="{{vip_level == 2}}">9折</text>
+        <text wx:if="{{vip_level == 3}}">8折</text>
     </view>
     <view class="submit" bindtap="submitOrder">
       提交订单
@@ -93,7 +93,7 @@
       <view class="pay_to">
         <view class="pay_to_who">向万枫酒店转账</view>
         <view class="money">
-          ￥{{allPrice}}.00
+          ￥{{allPrice}}
         </view>
       </view>
     </view>
