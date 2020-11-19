@@ -26,6 +26,8 @@
   <textarea class="con" name="" id="" cols="30" rows="10" placeholder="写其他建议和意见" placeholder-class="pl" value="{{value}}" bindinput="actionInput"></textarea>
 </view>
 
+
+
 <view class="mesage">
   满意的话请给五星好评哦，谢谢您的支持！
 </view>

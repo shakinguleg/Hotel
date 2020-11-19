@@ -66,3 +66,8 @@
   color: #666;
   font-size: 24rpx;
 }
+.confirm{
+  width: 400rpx;
+  height: 800rpx;
+  background-color: #fff;
+}

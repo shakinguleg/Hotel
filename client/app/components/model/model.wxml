@@ -1,0 +1,6 @@
+<!--components/model/model.wxml-->
+<view class="model-wrap" >
+  <view class="model-content">
+    <slot class="slot"></slot>
+  </view>
+</view>

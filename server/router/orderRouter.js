@@ -44,6 +44,7 @@ router.post('/addOrder',async (req,res)=>{
       price:req.body.price*1,
       end:req.body.end,
       state:state,
+      night:req.body.night,
       time:Date.now()
   })
   res.json({

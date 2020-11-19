@@ -3,7 +3,8 @@
     "banner": "../../components/banner/banner",
     "scroll": "../../components/scroll/scroll",
     "recommend": "../../components/recommmend/recommend",
-    "order": "../../components/order/order"
+    "order": "../../components/order/order",
+    "model":"../../components/model/model"
   },
   "navigationBarTitleText": "宏达万枫酒店"
 }

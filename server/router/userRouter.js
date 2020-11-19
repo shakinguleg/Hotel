@@ -22,6 +22,15 @@ function toggleVip(user){
             break;
     }
 }
+// function toggleOrderDate(str){
+//     let _str = str.slice(0,-1),
+//     return _str.split('月')
+// }
+// function countNight(start ,end){
+//     start = toggleOrderDate(start)
+//     end = toggleOrderDate(end)
+
+// }
 router.post('/register',async (req,res)=>{//注册
     const {openID} = req.body
     
