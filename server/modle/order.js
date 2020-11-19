@@ -41,6 +41,9 @@ module.exports = model('order',{
         type:String,
         required:true 
     },
+    night:{
+        type:String,
+    },
     time:{
         type:Number,
         required:true

@@ -1,0 +1,35 @@
+<!--app/pages/evaluate/evaluate.wxml-->
+<view class="done">
+  <view class="done-tit">订单已完成</view>
+  <text class="done-text">请对本次消费做出评价吧</text>
+</view>
+<view class="star">
+  <mp-icon type="field" icon="star" size="{{30}}" wx:for="{{star}}" wx:key="index"  color="{{index<=active?'#FF9103':'#ccc'}}" bindtap="actionStar" data-index="{{index}}"></mp-icon>
+</view>
+<view class="tag">
+   <!-- <view class="item-group" bindtap="selectTag"> -->
+    <view class="{{'tag-item' +(item.active?' tag-active':'')}}" bindtap="selectTag" data-tit="{{item.tit}}" wx:for="{{tag}}" wx:key="indedx">{{item.tit}}</view>
+    <!-- <view class="tag-item tag-active">菜品美味</view> -->
+   <!-- </view> -->
+   <!-- <view class="item-group"> -->
+    <!-- <view class="tag-item">有耐心</view> -->
+    <!-- <view class="tag-item tag-active">负责任</view> -->
+   <!-- </view> -->
+   <!-- <view class="item-group"> -->
+    <!-- <view class="tag-item">服务到位</view> -->
+    <!-- <view class="tag-item">价格合理</view> -->
+   </view>
+<!-- </view> -->
+
+<view class="input">
+  <text class="select">{{select}}</text>
+  <textarea class="con" name="" id="" cols="30" rows="10" placeholder="写其他建议和意见" placeholder-class="pl" value="{{value}}" bindinput="actionInput"></textarea>
+</view>
+
+
+
+<view class="mesage">
+  满意的话请给五星好评哦，谢谢您的支持！
+</view>
+
+<button type="primary">确认提交</button>

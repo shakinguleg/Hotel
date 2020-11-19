@@ -52,3 +52,27 @@
     </view>
   </view>
 </scroll-view>
+
+
+<!-- 七日签到-->
+<model wx:if="{{showModel}}">
+  <view class="clq-wrap">
+    <image class="clq-close" bindtap="closeSignIn" src="../../images/close.png"></image >
+    <view class="clq-header">
+      <view class="clq-tit">每日签到得好礼</view>
+      <view class="clq-desc">连续签到7天有礼包呦</view>
+    </view>
+    <view class="clq-con">
+        <view class="clq-item-wrap">
+          <view class="{{'clq-item' + (item< signIn?' clq-active':'')}}" wx:for="{{7}}" wx:key="item">
+          <text class="clq-text">第{{item+1}}天</text>
+          <text class="clq-text">{{10 + item*5}}积分</text>
+        </view>
+        </view>
+        <view class="clq-left"></view>
+        <view class="clq-right"></view>
+        <view class="clq-btn">点击签到</view>
+    </view>
+    <view class="clq-bottom">万枫国际酒店</view>
+  </view>
+</model>
