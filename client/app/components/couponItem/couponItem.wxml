@@ -1,18 +1,24 @@
 <!--components/couponItem/couponItem.wxml-->
-<view class="couponItem">
+<view class="couponItem" style="background-color: {{backcolor[couponItemData.couponType-1]}}" bindtap="tapAction">
   <view class="left">
-    <text class="left_title">万枫酒店优惠券</text>
+    <text class="left_title">{{couponItemData.title}}</text>
     <view class="text_wrap">
       <text>￥</text>
-      <text class="left_price">50</text>
-      <text class="left_con">满299元减50元</text>
+      <text class="left_price">{{couponItemData.price}}</text>
+      <text class="left_con">{{couponItemData.content}}</text>
     </view>
-    <view class="img" style="background-image: url('../../images/juchi-noused.png')">
-    </view>
+  </view>
+  <view class="stamp" style="width:{{width}}">
+    <block wx:if="{{couponItemData.couponType===2}}">
+      <image class="couponIcon" src="../../images/used.png" mode="widthFix" style="width:{{width}}"></image>
+    </block>
+    <block wx:if="{{couponItemData.couponType===3}}">
+      <image class="couponIcon" src="../../images/timeout.png" mode="widthFix" style="width:{{width}}"></image>
+    </block>
   </view>
   <view class="right">
     <text class="right_title">使用期限</text>
-    <text class="right_time">2015.11.10 00:00</text>
-    <text class="right_time">2015.12.10 00:00</text>
+    <text class="right_time">{{couponItemData.startTime}}</text>
+    <text class="right_time">{{couponItemData.endTime}}</text>
   </view>
 </view>

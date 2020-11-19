@@ -30,9 +30,9 @@
   </view>
   <!-- 总价 -->
   <view class="total_price">
-    <text class="date">2018/12/29  21:30</text>
-    <text class="wenzi">应付金额:</text>
-    <text class="total">￥68</text>
+    <view class="date">2018/12/29  21:30</view>
+    <view class="wenzi">应付金额:</view>
+    <view class="total">￥68</view>
   </view>
   <view class="last">
     <view class="btn pingjia" wx:if="{{status === 0}}">

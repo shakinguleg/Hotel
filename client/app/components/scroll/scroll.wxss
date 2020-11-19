@@ -3,6 +3,7 @@
   width: 750rpx;
   display: flex;
   background-color: white;
+  height: 139rpx;
 }
 
 .scroll_item_wrap {
@@ -22,7 +23,7 @@
   padding: 2px 10px;
   box-sizing: border-box;
   font-size: 10px;
-  color: white;
+  color: #333;
   width: 230rpx;
   display: flex;
   justify-content: center;
