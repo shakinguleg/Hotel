@@ -37,13 +37,20 @@
             count => 充值数量,
             VIPCode => 充值会员编码
     
-    6. 获取用户信息
+    6. 支付
+        path: "/api/user/recharge"
+        方法：post
+        参数：
+            user => 用户_id
+            price => 支付数量,
+            
+    7. 获取用户信息
         path: "api/user/userInfo"
         方法：get
         参数：
             openID => 微信小程序返回的用户id
 
-    7. 检查是否注册
+    8. 检查是否注册
         path："api/user/check"
         参数：
             openID => 微信用户id
@@ -78,6 +85,8 @@
             phone => 用户联系方式,
             message => 用户留言,
             price => 价格
+            state => 状态选填，默认为0
+
 
     2. 修改订单状态
         path："/api/order/updateState"，
@@ -86,11 +95,12 @@
             orderId  => 订单_id
             state => 订单状态
 
-    3. 获取所有优惠券
+    3. 获取所有订单
         path："/api/order/allOrder"，
         方法：get
         参数：
             user  => 用户_id
+
 
 ### 房间
     1. 获取所有房间

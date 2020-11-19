@@ -36,7 +36,7 @@
 </view>
 
 <view class="server">
-  <view class="info-tit">房型信息</view>
+  <view class="info-tit">服务设施</view>
   <view class="server-info">
     <view class="server-item" wx:for="{{server}}" wx:key="index">
       <image src="{{item.src}}" class="server-img"></image>
