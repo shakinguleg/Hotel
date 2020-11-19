@@ -32,7 +32,9 @@ Page({
     center_banner_data: [],
     // 今日推荐房间数据
     roomData:[],
-    path:''
+    path:'',
+    showModel:true,
+    signIn:1,
   },
 
   // 方法
@@ -42,7 +44,11 @@ Page({
     })
     // console.log(ev);
   },
-
+  closeSignIn(){
+    this.setData({
+      showModel:false
+    })
+  },
   onLoad: function (options) {
     
 
