@@ -194,6 +194,7 @@
 }
 .settlement .detail{
   font-size: 14px;
+  margin-right: 3px;
   color: #333;
 }
 .settlement .submit{
@@ -218,6 +219,95 @@
 }
 .pay_modal{
   width: 548rpx;
-  height: 238rpx;
+  height: 350rpx;
+  border-radius: 10px;
   background-color: #fff;
+  position: relative;
+}
+.pay_top{
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.close{
+  font-size: 15px;
+  color: #999;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+.use_password{
+  font-size: 13px;
+  color: rgb(111,129,163);
+  position: absolute;
+  right: 10px;
+  top: 13px;
+}
+.pay_to{
+  /* width: 100%; */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20% 0 10% 0;
+  box-sizing: border-box;
+  border-bottom: 1px solid #eee;
+}
+.pay_to_who{
+  font-size: 11px;
+  color: #333;
+}
+.money{
+  font-size: 20px;
+  color: #333;
+  font-weight: 600;
+}
+.pay_bottom{
+  width: 100%;
+  height: 50%;
+  box-sizing: border-box;
+  padding: 0 10px;
+}
+.pay_bottom .pay_method{
+  width: 100%;
+  height: 25px;
+  font-size: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.pay_bottom .pay_method .text{
+  color: #999;
+}
+.lingqian{
+  width: 50px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+.jingbi{
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.confirm_pay{
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.confirm_pay .font{
+  width: 125px;
+  height: 30px;
+  background-color: rgb(7,193,96);
+  border-radius: 3px;
+  text-align: center;
+  line-height: 30px;
+  color: #fff;
+  font-size: 14px;
 }
