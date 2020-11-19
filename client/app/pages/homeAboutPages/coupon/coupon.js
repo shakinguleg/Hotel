@@ -22,15 +22,18 @@ Page({
         data: []
       },
     ],
-    activeIndex: 0
-
+    activeIndex: 0,
+    toPath: "",
+    orderPrice: 1000000000000000000000000000000000000000
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    options && this.setData({
+      orderPrice: options.price
+    })
   },
 
   /**
@@ -50,6 +53,7 @@ Page({
         path
       }
     } = getApp()
+
     openID &&
       wx.request({
         // 获取优惠券信息
@@ -70,6 +74,7 @@ Page({
             id: item._id,
             title: item.title,
             price: item.price,
+            limit: item.limit,
             content: `满${item.limit}减${item.price}元`,
             startTime: item.start,
             endTime: item.end,
@@ -81,6 +86,7 @@ Page({
             id: item._id,
             title: item.title,
             price: item.price,
+            limit: item.limit,
             content: `满${item.limit}减${item.price}元`,
             startTime: item.start,
             endTime: item.end,
@@ -92,6 +98,9 @@ Page({
           const allCoupon = [...setCouponTypeArr, ...newUsedCoupon];
           // 未使用优惠券
           const noUsedCoupon = setCouponTypeArr.filter(item => item.couponType === 1)
+          // 设置未使用优惠券的数量
+          getApp().data.coupon = {}
+          getApp().data.coupon.num = noUsedCoupon.length
           // 已过期优惠券
           const timeoutCoupon = setCouponTypeArr.filter(item => item.couponType === 3)
           const arr = [{
@@ -118,6 +127,27 @@ Page({
           })
         }
       })
+
+    // 判断打开优惠券的界面
+    const deepPath = getCurrentPages()
+    const {
+      route
+    } = deepPath[deepPath.length - 2]
+    const arr = route.split("/")
+    const fromPath = arr[arr.length - 1]
+    if (fromPath === "reserve_room") {
+      // 如果是从预订界面
+      // 设置前往路径为预订界面
+      this.setData({
+        activeIndex: 1,
+        toPath: "../../../pages/reserve_room/reserve_room"
+      })
+
+    }
+    if (fromPath === "home") {
+      // 如果是从首页
+      console.log(2);
+    }
   },
 
   /**

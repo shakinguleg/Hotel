@@ -7,7 +7,8 @@
         <scroll-view class="tab-content" slot="tab-content-{{index}}" scroll-y="true">
           <view class="couponItem_wrap">
             <block wx:for="{{item.data}}" wx:for-item="couponItemData" wx:key="currentData">
-              <couponItem couponItemData="{{couponItemData}}"></couponItem>
+              <couponItem couponItemData="{{couponItemData}}" toPath="{{toPath}}" orderPrice="{{orderPrice}}">
+              </couponItem>
             </block>
           </view>
         </scroll-view>

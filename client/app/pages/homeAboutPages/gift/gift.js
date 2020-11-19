@@ -1,4 +1,7 @@
 // app/pages/gift/gift.js
+import SetUser from "../../../plugin/setUser"
+import pubsub from "../../../plugin/pubsub"
+
 Page({
 
   /**
@@ -15,17 +18,18 @@ Page({
   onLoad: function (options) {
     const {
       data: {
-        path,
-        user
+        path
       }
     } = getApp()
 
     // 设置余额
-    user && user.money &&
+    // 更改为监听(可删除注释)
+    this.id = SetUser.call(this, (user) => {
       this.setData({
         ...this.data,
         totalMoney: user.money + ".00"
       })
+    })
 
     // 展示充值礼包
     wx.request({
@@ -81,7 +85,7 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    pubsub.unSubscribe("user", this.id)
   },
 
   /**
