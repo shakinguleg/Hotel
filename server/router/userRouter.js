@@ -4,7 +4,6 @@ const Coupon = require('../modle/coupon')
 const router = new Router();
 const {formatDate} = require('clq-util')
 function toggleVip(user){
-  
     switch (user.VIPCode) {
         case 0:
             user.vip = "普通会员"
@@ -83,6 +82,17 @@ router.post('/useCoupon',async (req,res)=>{
     res.json({
         code:1,
         msg:"ok"
+    })
+})
+router.post('/pay',async (req,res)=>{
+    const {user,price} = req.body
+        let result = await User.findById(user)
+       data = await  User.findByIdAndUpdate(user,{money:result.money-(price*1),},{new:true}).lean()
+      toggleVip(data)
+    res.json({
+        code:1,
+        msg:"ok",
+        data
     })
 })
 router.post("/recharge" , async (req,res)=>{

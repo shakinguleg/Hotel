@@ -1,0 +1,68 @@
+/* app/pages/evaluate/evaluate.wxss */
+.done {
+  color: #333;
+  width: max-content;
+  padding-top: 40rpx;
+  margin: 0rpx auto;
+  text-align: center;
+  padding: 20rpx 0;
+  border-bottom: 4rpx #ccc dashed;
+}
+.done-tit {
+  font-size: 50rpx;
+}
+.star {
+  width: max-content;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20rpx 0;
+}
+.tag {
+  margin: 0 auto;
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.tag-item {
+  color: #FF9103;
+  background-color: #FCECD5;
+  width: max-content;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+  padding: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  border-radius: 40rpx;
+  font-size: 28rpx;
+}
+.tag-active {
+  background-color: #FF9000;
+  color: #fff;
+ 
+}
+.input{
+  width: 90%;
+  box-sizing: border-box;
+  margin:  20rpx auto;
+  border: 1rpx #ccc solid;
+  padding: 30rpx;
+  box-shadow: 0px 0px 10px #ccc;
+}
+.pl{
+  font-size: 28rpx;
+  color: #999;
+}
+.mesage{
+  text-align: center;
+  color: #999;
+  margin: 20rpx 0;
+}
+.con{
+  color: #666;
+  font-size: 28rpx;
+}
+.select{
+  color: #666;
+  font-size: 24rpx;
+}

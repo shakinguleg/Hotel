@@ -19,7 +19,7 @@ Page({
         user
       }
     } = getApp()
-
+    
     // 设置余额
     user && user.money &&
       this.setData({

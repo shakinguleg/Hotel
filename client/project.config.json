@@ -59,9 +59,11 @@
           "query": ""
         },
         {
+
+          "id": -1,
           "name": "pages/reserve_room/reserve_room",
           "pathName": "pages/reserve_room/reserve_room",
-          "id": -1,
+
           "query": "",
           "scene": null
         },
@@ -74,6 +76,18 @@
         {
           "name": "pages/home/home",
           "pathName": "pages/home/home",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/orderSuccess/orderSuccess",
+          "pathName": "pages/orderSuccess/orderSuccess",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/evaluate/evaluate",
+          "pathName": "pages/evaluate/evaluate",
           "scene": null
         }
       ]
