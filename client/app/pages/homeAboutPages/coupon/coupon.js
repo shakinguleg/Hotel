@@ -6,34 +6,20 @@ Page({
    */
   data: {
     tabs: [{
-        title: '技术开发',
-        title2: '小程序开发进阶',
-        img: 'http://mmbiz.qpic.cn/sz_mmbiz_jpg/GEWVeJPFkSEV5QjxLDJaL6ibHLSZ02TIcve0ocPXrdTVqGGbqAmh5Mw9V7504dlEiatSvnyibibHCrVQO2GEYsJicPA/0?wx_fmt=jpeg',
-        desc: '本视频系列课程，由腾讯课堂NEXT学院与微信团队联合出品，通过实战案例，深入浅出地进行讲解。',
+        title: '全部',
+        data: []
       },
       {
-        title: '产品解析',
-        title2: '微信小程序直播',
-        img: 'http://mmbiz.qpic.cn/sz_mmbiz_png/GEWVeJPFkSHALb0g5rCc4Jf5IqDfdwhWJ43I1IvriaV5uFr9fLAuv3uxHR7DQstbIxhNXFoQEcxGzWwzQUDBd6Q/0?wx_fmt=png',
-        desc: '微信小程序直播系列课程持续更新中，帮助大家更好地理解、应用微信小程序直播功能。',
+        title: '未使用',
+        data: []
       },
       {
-        title: '运营规范',
-        title2: '常见问题和解决方案',
-        img: 'http://mmbiz.qpic.cn/sz_mmbiz_jpg/GEWVeJPFkSGqys4ibO2a8L9nnIgH0ibjNXfbicNbZQQYfxxUpmicQglAEYQ2btVXjOhY9gRtSTCxKvAlKFek7sRUFA/0?wx_fmt=jpeg',
-        desc: '提高审核质量',
+        title: '已使用',
+        data: []
       },
       {
-        title: '营销经验',
-        title2: '流量主小程序',
-        img: 'http://mmbiz.qpic.cn/sz_mmbiz_jpg/GEWVeJPFkSH2Eic4Lt0HkZeEN08pWXTticVRgyNGgBVHMJwMtRhmB0hE4m4alSuwsBk3uBBOhdCr91bZlSFbYhFg/0?wx_fmt=jpeg',
-        desc: '本课程共四节，将分阶段为开发者展示如何开通流量主功能、如何接入广告组件、不同类型小程序接入的建议，以及如何通过工具调优小程序变现效率。',
-      },
-      {
-        title: '高校大赛',
-        title2: '2020中国高校计算机大赛',
-        img: 'http://mmbiz.qpic.cn/mmbiz_jpg/TcDuyasB5T3Eg34AYwjMw7xbEK2n01ekiaicPiaMInEMTkOQtuv1yke5KziaYF4MLia4IAbxlm0m5NxkibicFg4IZ92EA/0?wx_fmt=jpeg',
-        desc: '微信小程序应用开发赛',
+        title: '已过期',
+        data: []
       },
     ],
     activeIndex: 0
@@ -58,7 +44,80 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    const {
+      data: {
+        openID,
+        path
+      }
+    } = getApp()
+    openID &&
+      wx.request({
+        // 获取优惠券信息
+        url: path + "api/user/allCoupon",
+        method: "GET",
+        data: {
+          openID
+        },
+        success: (res) => {
+          const {
+            coupon,
+            usedCoupon
+          } = res.data.data[0]
+          // console.log(coupon, usedCoupon);
 
+          // 设置券的类型
+          const setCouponTypeArr = coupon.map(item => ({
+            id: item._id,
+            title: item.title,
+            price: item.price,
+            content: `满${item.limit}减${item.price}元`,
+            startTime: item.start,
+            endTime: item.end,
+            couponType: Date.now() < Date.parse(item.end) ? 1 : 3,
+          }))
+
+          // 类型为 已使用 优惠券
+          const newUsedCoupon = usedCoupon.map(item => ({
+            id: item._id,
+            title: item.title,
+            price: item.price,
+            content: `满${item.limit}减${item.price}元`,
+            startTime: item.start,
+            endTime: item.end,
+            couponType: 2,
+          }))
+
+          // 过滤数据
+          // 全部优惠券
+          const allCoupon = [...setCouponTypeArr, ...newUsedCoupon];
+          // 未使用优惠券
+          const noUsedCoupon = setCouponTypeArr.filter(item => item.couponType === 1)
+          // 已过期优惠券
+          const timeoutCoupon = setCouponTypeArr.filter(item => item.couponType === 3)
+          const arr = [{
+              title: '全部',
+              data: allCoupon
+            },
+            {
+              title: '未使用',
+              data: noUsedCoupon
+            },
+            {
+              title: '已使用',
+              data: newUsedCoupon
+            },
+            {
+              title: '已过期',
+              data: timeoutCoupon
+            },
+          ]
+
+          // 设置coupon数据
+          this.setData({
+            tabs: arr
+          })
+        }
+      })
   },
 
   /**
