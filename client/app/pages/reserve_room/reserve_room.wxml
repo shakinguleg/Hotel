@@ -6,9 +6,8 @@
   </view>
   <!-- 选择入住时间段 -->
   <view class="picker">
-    <picker-date class="picker-date"
-     bindgetStartDateAction="getStartDateAction"
-     bindgetEndDateAction="getEndDateAction"/>
+    <picker-date class="picker-date" bindgetStartDateAction="getStartDateAction"
+      bindgetEndDateAction="getEndDateAction" />
   </view>
   <!-- 提示信息 -->
   <view class="tip">
@@ -28,19 +27,19 @@
   <view class="people_name">
     <view>入住人</view>
     <input class="name_input" type="text" value="{{name_value}}" placeholder="请填写入住人姓名" placeholder-class="placeholder"
-      bindinput="changeNameAction" />
+      bindinput="changeNameAction" wx:if="{{!showModal}}" />
   </view>
   <!-- 手机号 -->
   <view class="phone_number">
     <view>手机号</view>
     <input class="name_input" type="text" value="{{phoneNumber}}" placeholder="请填写入住人手机号"
-      placeholder-class="placeholder" bindinput="changePhoneNumberAction" />
+      placeholder-class="placeholder" bindinput="changePhoneNumberAction" wx:if="{{!showModal}}" />
   </view>
   <view class="tips_phone">
     接受预定通知的手机号：{{phoneNumber}}
   </view>
   <!-- 优惠券 -->
-  <view class="coupons">
+  <view class="coupons" bindtap="chooseCouponAction" data-price="{{allPrice}}">
     <view>优惠券</view>
     <view>
       <text>2张可用</text>
@@ -49,8 +48,8 @@
   </view>
   <!-- 留言 -->
   <view class="remark">
-    <textarea class="remark_content" value="{{message}}" placeholder="留言不多于30个汉字" placeholder-class="textarea" hold-keyboard="true"
-      maxlength="30" bindinput="messageChangeAction"/>
+    <textarea class="remark_content" value="{{message}}" placeholder="留言不多于30个汉字" placeholder-class="textarea"
+      hold-keyboard="true" maxlength="30" bindinput="messageChangeAction" wx:if="{{!showModal}}" />
     </view>
   <!-- 选择支付方式 -->
   <view class="payment_method">
@@ -72,25 +71,45 @@
     <text class="zhifu">需支付</text>
     <text class="price">￥{{allPrice}}.00</text>
     <view class="detail">
-      <text>明细</text>
+      <text>折扣:</text>
+        <text wx:if="{{vip_level === 1}}">9折</text>
+        <text wx:if="{{vip_level == 2}}">8折</text>
+        <text wx:if="{{vip_level == 3}}">7折</text>
     </view>
     <view class="submit" bindtap="submitOrder">
       提交订单
     </view>
   </view>
 </view>
-<view class="pay_wrap">
+<view class="pay_wrap" wx:if="{{showModal}}">
   <view class="pay_modal">
     <view class="pay_top">
       <view class="close">
-        <mp-icon icon="close" />
+        <mp-icon icon="close" bindtap="closeModalAction"/>
       </view>
       <view class="use_password">
         使用密码
       </view>
+      <view class="pay_to">
+        <view class="pay_to_who">向万枫酒店转账</view>
+        <view class="money">
+          ￥{{allPrice}}.00
+        </view>
+      </view>
     </view>
     <view class="pay_bottom">
-
+      <view class="pay_method">
+        <view class="text">
+          支付方式
+        </view>
+        <view class="lingqian">
+          <image class="jingbi" src="../../images/money2.png"></image>
+          <text>零钱 ></text>
+        </view>
+      </view>
+      <view class="confirm_pay">
+        <view class="font" bindtap="payAction">确认支付</view> 
+      </view>
     </view>
   </view>
 </view>

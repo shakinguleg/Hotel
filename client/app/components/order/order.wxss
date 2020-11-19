@@ -67,13 +67,15 @@
   padding: 0 10px;
 }
 .total_price .date{
+  width: 150px;
   font-size: 14px;
   color: #a1a1a1;
 }
 .total_price .wenzi{
+  width: 80px;
   font-size: 14px;
   color: #333;
-  margin-left: 120px;
+  margin-left: 30px;
 }
 .total_price .total{
   font-size: 17px;
