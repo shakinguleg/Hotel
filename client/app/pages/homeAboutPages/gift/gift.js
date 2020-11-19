@@ -21,7 +21,7 @@ Page({
         path
       }
     } = getApp()
-
+    
     // 设置余额
     // 更改为监听(可删除注释)
     this.id = SetUser.call(this, (user) => {

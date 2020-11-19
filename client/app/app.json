@@ -13,7 +13,8 @@
     "pages/homeAboutPages/dailySign/dailySign",
     "pages/homeAboutPages/myOrder/myOrder",
     "pages/orderSuccess/orderSuccess",
-    "pages/detail/detail"
+    "pages/detail/detail",
+    "pages/evaluate/evaluate"
   ],
   "tabBar": {
     "color": "#333",
