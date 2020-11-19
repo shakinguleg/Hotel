@@ -1,4 +1,4 @@
-<view class="recommend">
+<view class="recommend" bindtap="goDetailAction" >
   <view class="left">
     <image class="img"
       src="{{path + roomInfo.cover}}"
@@ -19,7 +19,7 @@
       <mp-icon wx:for="{{5-roomInfo.rate}}" wx:key="index" type="field" icon="star" color="grey" size="{{12}}" />
       <text class="score">推荐</text>
     </view>
-    <view class="reserve" bindtap="reserveRoomAction" data-_id="{{roomInfo._id}}" data-title="{{roomInfo.title}}" data-price="{{roomInfo.price}}">
+    <view class="reserve" catchtap="reserveRoomAction" data-_id="{{roomInfo._id}}" data-title="{{roomInfo.title}}" data-price="{{roomInfo.price}}">
       预定
     </view>
   </view>

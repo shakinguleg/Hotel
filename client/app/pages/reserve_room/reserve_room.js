@@ -12,7 +12,7 @@ Page({
       count: this.data.count - 1
     });
     this.setData({
-      allPrice: this.data.price * this.data.count * this.data.duration * this.data.discount
+      allPrice: (this.data.price * this.data.count * this.data.duration * this.data.discount).toFixed(2)
     });
   },
   increaseAction() {
@@ -20,7 +20,7 @@ Page({
       count: this.data.count + 1
     });
     this.setData({
-      allPrice: this.data.price * this.data.count * this.data.duration * this.data.discount
+      allPrice: (this.data.price * this.data.count * this.data.duration * this.data.discount).toFixed(2)
     });
   },
   changeNameAction(ev) {
@@ -53,7 +53,7 @@ Page({
       duration: child.data.duration
     });
     this.setData({
-      allPrice: this.data.price * this.data.count * this.data.duration * this.data.discount
+      allPrice: (this.data.price * this.data.count * this.data.duration * this.data.discount).toFixed(2)
     });
   },
   getEndDateAction(res) {
@@ -65,7 +65,7 @@ Page({
       duration: child.data.duration
     });
     this.setData({
-      allPrice: this.data.price * this.data.count * this.data.duration * this.data.discount
+      allPrice: (this.data.price * this.data.count * this.data.duration * this.data.discount).toFixed(2)
     });
   },
   // 提交订单
@@ -80,18 +80,6 @@ Page({
       icon: 'none',
       duration: 2000
     });
-    // path："/api/order/addOrder"，
-    // 方法：post
-    // 参数：
-    //     user  => 用户_id
-    //     room => 房间_id  
-    //     count => 数量,
-    //     start => 开始时间,
-    //     end => 结束时间,
-    //     name => 用户名字,
-    //     phone => 用户联系方式,
-    //     message => 用户留言,
-    //     price => 价格
     wx.request({
       url: `${this.data.path}api/order/addOrder`,
       method: "POST",
@@ -104,7 +92,9 @@ Page({
         name:this.data.name_value,
         phone:this.data.phoneNumber,
         message:this.data.message,
-        price:this.data.allPrice
+        price:this.data.allPrice,
+        night:this.data.duration,
+        state:1
       },
       success:(res)=>{
         console.log(res);
@@ -115,9 +105,28 @@ Page({
     });
   },
   closeModalAction() {
+    wx.request({
+      url: `${this.data.path}api/order/addOrder`,
+      method: "POST",
+      data:{
+        user:this.data.user_id,
+        room:this.data.room_id,
+        count:this.data.count,
+        start:this.data.start,
+        end:this.data.end,
+        name:this.data.name_value,
+        phone:this.data.phoneNumber,
+        message:this.data.message,
+        night:this.data.duration,
+        price:this.data.allPrice
+      },
+      success:(res)=>{
+        console.log(res);
+      }
+    });
     this.setData({
       showModal: !this.data.showModal
-    })
+    });
   },
   chooseCouponAction(res){
     wx.navigateTo({
@@ -146,7 +155,7 @@ Page({
     singalPrice: 0,
     allPrice: 0,
     // 支付方式
-    payment_method: '',
+    payment_method: 'wechat',
     duration: 1,
     // 控制input与textarea穿透问题
     showModal: false,
@@ -159,21 +168,24 @@ Page({
         image: "../../images/wechat.png",
         title: "微信支付",
         class: "wechat_pay",
-        imageClass: "pay_logo"
+        imageClass: "pay_logo",
+        checked:true
       },
       {
         value: "remain",
         image: "../../images/remain.png",
         title: "余额支付",
         class: "remain_pay",
-        imageClass: "pay_logo"
+        imageClass: "pay_logo",
+        checked:false
       },
       {
         value: "friend",
         image: "../../images/friend.png",
         title: "好友代付",
         class: "friend_pay",
-        imageClass: "pay_logo"
+        imageClass: "pay_logo",
+        checked:false
       }
     ]
   },
@@ -192,15 +204,15 @@ Page({
       });
     } else if (this.data.vip_level === 1) {
       this.setData({
-        discount: 9.5
+        discount: 0.95
       });
     } else if (this.data.vip_level === 2) {
       this.setData({
-        discount: 9
+        discount: 0.9
       });
     } else if (this.data.vip_level === 3) {
       this.setData({
-        discount: 8
+        discount: 0.8
       })
     } else {
       this.setData({
@@ -219,7 +231,7 @@ Page({
     this.setData({
       room_id: options.room_id,
       roomType: options.title,
-      allPrice: options.price,
+      allPrice: (options.price*this.data.discount).toFixed(2),
       price: options.price
     });
   },
