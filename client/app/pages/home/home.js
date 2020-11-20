@@ -1,4 +1,6 @@
 // app/pages/home/home.js
+import SetUser from '../../plugin/setUser'
+import formatDate from '../../plugin/formatDate'
 const BASE_URL = "http://10.36.150.18:3000/"
 const BANNER_URL = "http://10.36.150.18:3000/api/banner/banner?type=home";
 const CENTER_SWIPER_URL = "http://10.36.150.18:3000/api/room/allRoom"
@@ -31,10 +33,12 @@ Page({
     }],
     center_banner_data: [],
     // 今日推荐房间数据
-    roomData: [],
-    path: '',
-    showModel: false,
-    signIn: 1,
+
+    roomData:[],
+    path:'',
+    showModel:true,
+    signIn:[],
+    canSignIn:false
   },
 
   // 相关入口点击事件
@@ -63,9 +67,35 @@ Page({
       showModel: false
     })
   },
+  actionSignIn(){
+    if(!this.data.canSignIn){
+      return
+    }else{
+      wx.request({
+        url:getApp().data.path + 'api/user/signIn',
+        method:'POST',
+        data:{
+          user:getApp().data.user._id,
+          date:Date.now()
+        },
+        success:(res)=>{
+          getApp().setUser(res.data.data)
+        }
+      })
+    }
+  },
   onLoad: function (options) {
-
-
+    //实时获取用户数据
+    SetUser.call(this,(user)=>{
+      let today = formatDate("Y-M-D")
+      
+        this.setData({
+          signIn:user.signIn.map(item => formatDate("Y-M-D",(item*1))),
+        })
+        this.setData({
+          canSignIn:!this.data.signIn.includes(today)
+        })
+    })
     // 获取banner图地址
     wx.request({
       url: BANNER_URL,

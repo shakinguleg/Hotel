@@ -2,7 +2,7 @@
 <swiper circular="true" autoplay="true" class="swiper">
   <swiper-item wx:for="{{room.image}}" class="img-item" wx:key="index">
     <view class="img-wrap">
-      <image src="{{item}}" class="img"></image>
+      <image src="{{path + item}}" class="img"></image>
     </view>
   </swiper-item>
 </swiper>
@@ -85,7 +85,7 @@
     <view class="comment-item" wx:for="{{4}}" wx:key="index">
       <view class="comment-left">
         
-        <image class="avatar" src="http://www.axshare.cn/gsc/EJ7I57/f0/b1/cf/f0b1cf8a0a0449dea4117438472f3b9f/images/%E6%A1%86%E6%9E%B6/u1322.jpg?token=f3674c9aa437702572d396ef481f1f5dc62c656dc94392ce7a4670910721d256"></image>
+        <image class="avatar" src="http://p2.music.126.net/CZEhqIctvygUaq2yxnrw8Q==/109951165339517717.jpg"></image>
       </view>
       <view class="comment-right">
         <view class="commont-top">
