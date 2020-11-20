@@ -152,4 +152,16 @@ router.get("/userInfo" , async (req,res)=>{
         })
     
 })
+router.post('/signIn',async (req,res)=>{
+    const {user,date} = req.body
+    let {integral,signIn} = await User.findById(user)
+    console.log('signIn: ', signIn);
+    console.log('integral: ', integral);
+   let data =  await User.findByIdAndUpdate(user,{$push:{signIn:date},integral:integral + (signIn.length%7)*5+10},{new:true})
+    res.json({
+        code:1,
+        mag:"ok",
+        data
+    })
+})
 module.exports = router

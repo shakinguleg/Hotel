@@ -59,11 +59,9 @@
           "query": ""
         },
         {
-
           "id": -1,
           "name": "pages/reserve_room/reserve_room",
           "pathName": "pages/reserve_room/reserve_room",
-
           "query": "",
           "scene": null
         },

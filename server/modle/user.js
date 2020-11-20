@@ -43,5 +43,9 @@ module.exports = model('user',{
     VIPCode:{
         type:Number,
         default:0
+    },
+    signIn:{
+        type:Array,
+        default:[]
     }
 })
