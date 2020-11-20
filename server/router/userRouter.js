@@ -25,7 +25,6 @@ function toggleVip(user){
 }
 router.post('/register',async (req,res)=>{//注册
     const {openID} = req.body
-    
     const result = await User.findOne({openID})
     if(result){
         res.json({
@@ -33,21 +32,24 @@ router.post('/register',async (req,res)=>{//注册
             msg:'用户名重复'
         })
     }else{
-    let newUser =  await User.create({...req.body,time:formatDate("Y-M-D H-M-S")}).lean()
+    let newUser =  await User.create({...req.body,time:formatDate("Y-M-D H-M-S")})
+    let data = await User.findOne({openID}).lean()
+    toggleVip(data)
     toggleVip(newUser)
         res.json({
             code:0,
             msg:'注册成功',
-            data:newUser
+            data
         })
     }
 })
 router.get('/check',async (req,res)=> {
     const {openID} = req.query;
     const data = await User.findOne({openID}).lean()
-    toggleVip(data)
+    
 
     if(data){
+        toggleVip(data)
         res.json({
             code:1,
             data
@@ -77,7 +79,7 @@ router.get('/allCoupon',async (req,res)=>{
 })
 router.post('/useCoupon',async (req,res)=>{
     const {openID,couponId} = req.body
-    console.log('openID: ', openID);
+    
     
   await User.updateOne({openID},{$pull:{coupon:couponId}})
   await User.updateOne({openID},{$push:{usedCoupon:couponId}})
@@ -165,6 +167,7 @@ router.post('/canExchangeCoupon',async (req,res)=>{
     let {coupon,usedCoupon}  = await User.findById(user).lean()
     let arr  = [...coupon,...usedCoupon] 
     let data = await Coupon.find().lean()
+    
     data.forEach(item => {
         arr.forEach(cou => {
             if(item._id.toString() == cou){

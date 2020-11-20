@@ -32,6 +32,8 @@ App({
         method:"GET",
         success:(res2)=>{
           this.data.code = res2.data.code
+
+          
           if(!res2.data.code){
             wx.redirectTo({
               url: '/pages/login/login',

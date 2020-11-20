@@ -45,7 +45,8 @@
 </view>
 
 <view class="tab">
-    <view class="tab-item">
+
+    <view class="tab-item" bindtap="actionRouter" data-path="../../pages/order/order">
       <view class="left">
         <image src="../../images/order.png"></image>
         <text>我的订单</text>
@@ -54,6 +55,7 @@
         <mp-icon icon="arrow" color="#666" size="{{16}}"></mp-icon>
       </view>
     </view>
+
     <view class="tab-item">
       <view class="left">
         <image src="../../images/vip.png"></image>
@@ -73,7 +75,7 @@
       </view>
     </view>
   
-    <view class="tab-item">
+    <view class="tab-item"  bindtap="actionRouter" data-path="../../pages/homeAboutPages/coupon/coupon">
       <view class="left">
         <image src="../../images/coupen.png"></image>
         <text>我的优惠券</text>
