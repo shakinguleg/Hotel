@@ -98,7 +98,6 @@ Page({
           const allCoupon = [...setCouponTypeArr, ...newUsedCoupon];
           // 未使用优惠券
           const noUsedCoupon = setCouponTypeArr.filter(item => item.couponType === 1)
-
           // 已过期优惠券
           const timeoutCoupon = setCouponTypeArr.filter(item => item.couponType === 3)
           const arr = [{
@@ -144,7 +143,6 @@ Page({
     }
     if (fromPath === "home") {
       // 如果是从首页
-      console.log(2);
     }
   },
 

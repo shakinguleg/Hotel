@@ -3,7 +3,7 @@
   background-color: #eee;
   width: 100%;
   height: 100%;
-  font-size: 10px;
+  font-size: 24rpx;
 }
 
 .gift_top {
@@ -31,8 +31,8 @@
 }
 
 .gift_top_info {
-  margin-bottom: 10px;
-  font-size: 8px;
+  margin-bottom: 20rpx;
+  font-size: 20rpx;
 }
 
 .gift_top_text {
@@ -55,7 +55,7 @@
   width: 100%;
   height: 30px;
   background-color: white;
-  font-size: 12px;
+  font-size: 28rpx;
   display: flex;
   align-items: center;
 }

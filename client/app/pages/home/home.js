@@ -17,7 +17,7 @@ Page({
     }, {
       imgPath: "../../images/meiriqiandao.png",
       text: "每日签到",
-      goPath: "../homeAboutPages/dailySign/dailySign"
+      goPath: "dailySign"
     }, {
       imgPath: "../../images/youhuiquan.png",
       text: "优惠券",
@@ -25,7 +25,7 @@ Page({
     }, {
       imgPath: "../../images/wodedingdan.png",
       text: "我的订单",
-      goPath: "../homeAboutPages/myOrder/myOrder"
+      goPath: "myOrder"
     }, {
       imgPath: "../../images/shangchengdingdan.png",
       text: "积分商城",
@@ -33,6 +33,7 @@ Page({
     }],
     center_banner_data: [],
     // 今日推荐房间数据
+
     roomData:[],
     path:'',
     showModel:true,
@@ -40,16 +41,30 @@ Page({
     canSignIn:false
   },
 
-  // 方法
-  goAction: (ev) => {
+  // 相关入口点击事件
+  goAction(ev) {
+    // 如果路径为签到页面
+    if (ev.currentTarget.dataset.action === "dailySign") {
+      this.setData({
+        showModel: true
+      })
+      return
+    }
+    // 如果路径为订单页面
+    if (ev.currentTarget.dataset.action === "myOrder") {
+      wx.switchTab({
+        url: '/pages/order/order',
+      })
+      return
+    }
     wx.navigateTo({
       url: ev.currentTarget.dataset.action,
     })
     // console.log(ev);
   },
-  closeSignIn(){
+  closeSignIn() {
     this.setData({
-      showModel:false
+      showModel: false
     })
   },
   actionSignIn(){
@@ -81,7 +96,6 @@ Page({
           canSignIn:!this.data.signIn.includes(today)
         })
     })
-
     // 获取banner图地址
     wx.request({
       url: BANNER_URL,
@@ -139,12 +153,16 @@ Page({
     })
     // 请求首页今日推荐房间数据
     const App = getApp();
-    
-    this.setData({path:App.data.path});
+
+    this.setData({
+      path: App.data.path
+    });
     wx.request({
-      url: App.data.path+'api/room/allRoom',
-      success:(res)=>{
-        this.setData({roomData:res.data.data});
+      url: App.data.path + 'api/room/allRoom',
+      success: (res) => {
+        this.setData({
+          roomData: res.data.data
+        });
       }
     })
   },

@@ -1,0 +1,19 @@
+<!--components/pointsExchangeItem/pointsExchangeItem.wxml-->
+<view class="pointsExchangeItem">
+  <view class="left">
+    <view class="dot__left_top"></view>
+    <view class="dot__left_bottom"></view>
+    <text class="left_text">全场优惠券</text>
+  </view>
+  <view class="center">
+    <text class="left_title">积分兑换{{pointsItemData.price}}元抵用券</text>
+    <view class="text_wrap">
+      满{{pointsItemData.limit}}减{{pointsItemData.price}}元
+    </view>
+    <view class="bottom">使用期限:{{pointsItemData.start}}-{{pointsItemData.end}} </view>
+  </view>
+  <view class="right">
+    <view class="integral">{{pointsItemData.integral}}积分</view>
+    <view class="btn_exchange" bindtap="tapAction">{{pointsItemData.exchange?"立即兑换":"已兑换"}}</view>
+  </view>
+</view>
