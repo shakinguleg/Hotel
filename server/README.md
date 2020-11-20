@@ -38,7 +38,7 @@
             VIPCode => 充值会员编码
     
     6. 支付
-        path: "/api/user/recharge"
+        path: "/api/user/pay"
         方法：post
         参数：
             user => 用户_id
