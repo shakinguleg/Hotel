@@ -42,7 +42,8 @@
   <view class="coupons" bindtap="chooseCouponAction" data-price="{{allPrice}}">
     <view>优惠券</view>
     <view>
-      <text>2张可用</text>
+      <text wx:if="{{usingCouponPrice === 0}}">{{couponCount}}张可用</text>
+      <text wx:else>-{{usingCouponPrice}}</text>
       <mp-icon size="15" icon="arrow" />
     </view>
   </view>
