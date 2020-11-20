@@ -95,8 +95,9 @@ router.post('/useCoupon',async (req,res)=>{
 })
 router.post('/pay',async (req,res)=>{
     const {user,price} = req.body
-        let result = await User.findById(user)
-       data = await  User.findByIdAndUpdate(user,{money:result.money-(price*1),},{new:true}).lean()
+        let {money,integral} = await User.findById(user)
+       
+       data = await  User.findByIdAndUpdate(user,{money:money-(price*1),integral:integral + parseInt((price*1)/10)},{new:true}).lean()
       toggleVip(data)
     res.json({
         code:1,
@@ -155,8 +156,8 @@ router.get("/userInfo" , async (req,res)=>{
 router.post('/signIn',async (req,res)=>{
     const {user,date} = req.body
     let {integral,signIn} = await User.findById(user)
-    console.log('signIn: ', signIn);
-    console.log('integral: ', integral);
+    
+    
    let data =  await User.findByIdAndUpdate(user,{$push:{signIn:date},integral:integral + (signIn.length%7)*5+10},{new:true})
     res.json({
         code:1,
