@@ -1,4 +1,6 @@
+import pubsub from '../../plugin/pubsub';
 // app/pages/reserve_room/reserve_room.js
+import SetUser from '../../plugin/setUser'
 Page({
   reduceAction() {
     if (this.data.count === 1) {
@@ -75,16 +77,36 @@ Page({
     })
   },
   payAction() {
-    wx.showToast({
-      title: '支付成功',
-      icon: 'none',
-      duration: 2000
-    });
+   
+    
+
+    if(this.data.payment_method === 'remain'){
+      // 查询用户余额，再判断需不需要弹出确认支付框
+      if(this.data.user.money < this.data.allPrice){
+        wx.showToast({
+          title: '余额不足',
+          icon:'none'
+        })
+      }else{
+        wx.request({
+          url: `${this.data.path}api/user/pay`,
+          method:"POST",
+          data:{
+            user:this.data.user._id,
+            price:this.data.allPrice
+          },
+          success(res){
+            getApp().setUser(res.data.data)
+          }
+        })
+      }
+    }
+   console.log(1111);
     wx.request({
       url: `${this.data.path}api/order/addOrder`,
       method: "POST",
       data:{
-        user:this.data.user_id,
+        user:this.data.user._id,
         room:this.data.room_id,
         count:this.data.count,
         start:this.data.start,
@@ -97,19 +119,31 @@ Page({
         state:1
       },
       success:(res)=>{
-        console.log(res);
+        wx.redirectTo({
+          url: `../orderSuccess/orderSuccess?start=${this.data.start}&end=${this.data.end}&roomType=${this.data.roomType}&allPrice=${this.data.allPrice}&count=${this.data.count}`,
+        });
+        wx.showToast({
+          title: '支付成功',
+          icon: 'none',
+          duration: 2000
+        });
+      },
+      fail(){
+        wx.showToast({
+          title: '支付失败',
+          icon: 'none',
+          duration: 2000
+        });
       }
     });
-    wx.redirectTo({
-      url: `../orderSuccess/orderSuccess?start=${this.data.start}&end=${this.data.end}&roomType=${this.data.roomType}&allPrice=${this.data.allPrice}&count=${this.data.count}`,
-    });
+    
   },
   closeModalAction() {
     wx.request({
       url: `${this.data.path}api/order/addOrder`,
       method: "POST",
       data:{
-        user:this.data.user_id,
+        user:this.data.user._id,
         room:this.data.room_id,
         count:this.data.count,
         start:this.data.start,
@@ -129,12 +163,14 @@ Page({
     });
   },
   chooseCouponAction(res){
+
     wx.navigateTo({
       url: '../homeAboutPages/coupon/coupon'+'?'+'price='+res.currentTarget.dataset.price,
     });
   },
   data: {
-    user_id:'',
+    appData:null,
+    user:{},
     path:'',
     // 房间_id
     room_id: null,
@@ -152,17 +188,15 @@ Page({
     phoneNumber: '',
     // 留言
     message: '',
-    singalPrice: 0,
     allPrice: 0,
     // 支付方式
     payment_method: 'wechat',
     duration: 1,
     // 控制input与textarea穿透问题
     showModal: false,
-    // vip等级
-    vip_level: 1,
     // 折扣
     discount: 1,
+    couponPrice:0,
     items: [{
         value: "wechat",
         image: "../../images/wechat.png",
@@ -190,27 +224,49 @@ Page({
     ]
   },
   onLoad: function (options) {
+    // 将app的数据挂到页面的appData上,方便后续拿数据
+    this.setData({appData:getApp().data,path:getApp().data.path});
+   this.id =  SetUser.call(this)
+    if(this.data.appData.coupon){
+      this.setData({couponPrice:this.data.appData.coupon.price})
+    };
 
-    const App = getApp();
-    console.log(App);
-    this.setData({path:App.data.path,user_id:App.data.user._id});
-    const vip = (1 && App.data.user.VIPCode);
-    this.setData({
-      vip_level: vip
-    });
-    if (this.data.vip_level === 0) {
+      // 获取优惠券信息
+    getApp().data.openID &&
+      wx.request({
+        url: getApp().data.path + "api/user/allCoupon",
+        method: "GET",
+        data: {
+          openID: getApp().data.openID
+        },
+        success: (res) => {
+          const {
+            coupon,
+          } = res.data.data[0]
+          // console.log(coupon, usedCoupon);
+          const noUsedCoupon = coupon.map(item => (
+            Date.now() < Date.parse(item.end)
+          ))
+          // 挂载未使用优惠券的数量
+          getApp().data.coupon = {}
+          getApp().data.coupon.num = noUsedCoupon.length
+        }
+      })
+
+
+    if (this.data.user.VIPCode === 0) {
       this.setData({
         discount: 1
       });
-    } else if (this.data.vip_level === 1) {
+    } else if (this.data.user.VIPCode === 1) {
       this.setData({
         discount: 0.95
       });
-    } else if (this.data.vip_level === 2) {
+    } else if (this.data.user.VIPCode === 2) {
       this.setData({
         discount: 0.9
       });
-    } else if (this.data.vip_level === 3) {
+    } else if (this.data.user.VIPCode === 3) {
       this.setData({
         discount: 0.8
       })
@@ -235,4 +291,7 @@ Page({
       price: options.price
     });
   },
+  onUnload:function(){
+    pubsub.unSubscribe('user',this.id)
+  }
 })

@@ -69,9 +69,10 @@ Component({
           }
           console.log(getApp());
 
-          wx.navigateTo({
-            url: this.data.toPath,
-          })
+          // wx.navigateTo({
+          //   url: this.data.toPath,
+          // })
+          wx.navigateBack();
         }
       }
     }
