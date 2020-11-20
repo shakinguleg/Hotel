@@ -72,9 +72,7 @@
     <text class="price">￥{{allPrice}}</text>
     <view class="detail">
       <text>折扣:</text>
-        <text wx:if="{{vip_level === 1}}">9.5折</text>
-        <text wx:if="{{vip_level == 2}}">9折</text>
-        <text wx:if="{{vip_level == 3}}">8折</text>
+        <text>{{discount*10}}折</text>
     </view>
     <view class="submit" bindtap="submitOrder">
       提交订单
