@@ -4,6 +4,7 @@ const Coupon = require('../modle/coupon')
 const router = new Router();
 const {formatDate} = require('clq-util')
 function toggleVip(user){
+    user.money = user.money.toFixed(2)*1
     switch (user.VIPCode) {
         case 0:
             user.vip = "普通会员"
@@ -54,6 +55,7 @@ router.get('/check',async (req,res)=> {
     const {openID} = req.query;
     const data = await User.findOne({openID}).lean()
     toggleVip(data)
+
     if(data){
         res.json({
             code:1,
@@ -97,8 +99,10 @@ router.post('/pay',async (req,res)=>{
     const {user,price} = req.body
         let {money,integral} = await User.findById(user)
        
-       data = await  User.findByIdAndUpdate(user,{money:money-(price*1),integral:integral + parseInt((price*1)/10)},{new:true}).lean()
+       data = await  User.findByIdAndUpdate(user,{money:(money-(price*1).toFixed(2)*1),integral:integral + parseInt((price*1)/10)},{new:true}).lean()
       toggleVip(data)
+    //   data.money = data.money.toFixed(2)*1
+    //   
     res.json({
         code:1,
         msg:"ok",
@@ -162,6 +166,34 @@ router.post('/signIn',async (req,res)=>{
     res.json({
         code:1,
         mag:"ok",
+        data
+    })
+})
+router.post('/canExchangeCoupon',async (req,res)=>{
+    const {user} = req.body
+    let {coupon,usedCoupon}  = await User.findById(user).lean()
+    let arr  = [...coupon,...usedCoupon] 
+    let data = await Coupon.find().lean()
+    data.forEach(item => {
+        arr.forEach(cou => {
+            if(item._id.toString() == cou){
+                item.exchange = false
+            }
+        })
+    })
+    res.json({
+        code:1,
+    msg:'ok',
+    data
+    })
+})
+router.post('/exchange',async (req,res)=>{
+    const {user,integral} = req.body
+    let oldIntegral = await User.findById(user)
+    const data = await  User.findByIdAndUpdate(user,{integral:oldIntegral.integral -(integral*1)},{new:true})
+    res.json({
+        code:1,
+        msg:'ok',
         data
     })
 })

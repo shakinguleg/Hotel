@@ -52,8 +52,23 @@
 
     8. 检查是否注册
         path："api/user/check"
+        方法：get
         参数：
             openID => 微信用户id
+
+    9. 积分兑换
+        path："api/user/exchange"
+        方法：post
+        参数：
+            user => 用户_id，
+            integral => 消耗的积分
+
+    10. 获取用户可以兑换的优惠券
+        path："api/user/canExchangeCoupon"
+        方法：post
+        参数：
+            user => 用户_id，
+            
 ### 轮播图
     1. 获取轮播图
         path："/api/banner/banner"，

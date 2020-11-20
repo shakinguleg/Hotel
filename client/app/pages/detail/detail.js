@@ -39,47 +39,7 @@ Page({
       src:'../../images/hair.png'
     },
   ],
-    room: {
-      "tag": [
-          "舒适",
-          "全景阳台",
-          "温泉"
-      ],
-      "info": [
-          [
-              "房间面积",
-              "65平方米"
-          ],
-          [
-              "床型",
-              "1.8m x 2m"
-          ],
-          [
-              "可住人数",
-              "2人"
-          ],
-          [
-              "能否加床",
-              "不可加床"
-          ],
-          [
-              "是否含早餐",
-              "含两位"
-          ]
-      ],
-      "image": [
-          `${getApp().data.path}roomImage/1.png`,
-          `${getApp().data.path}roomImage/2.png`
-      ],
-      "_id": "5fb268ac2c360947c4a73db2",
-      "id": "1001",
-      "rate": "5",
-      "time": "2020年11月16日 19时55分24秒",
-      "cover": "roomImage/cover.png",
-      "price": 588,
-      "title": "舒适家庭房",
-      "__v": 0
-  },
+
 
   },
 
@@ -87,14 +47,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-      wx.request({
-        url: getApp().data.path + 'api/banner/banner?type=roomBanner',
-        success:(res)=>{
+    console.log();
           this.setData({
-            banner:res.data.data[0].image.map(item => getApp().data.path + item)
+            room:JSON.parse(options.roomInfo),
+            path:getApp().data.path
           })
-        }
-      })
+  
+
   },
 
   /**

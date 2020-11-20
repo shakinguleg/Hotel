@@ -2,7 +2,7 @@
 <swiper circular="true" autoplay="true" class="swiper">
   <swiper-item wx:for="{{room.image}}" class="img-item" wx:key="index">
     <view class="img-wrap">
-      <image src="{{item}}" class="img"></image>
+      <image src="{{path + item}}" class="img"></image>
     </view>
   </swiper-item>
 </swiper>
