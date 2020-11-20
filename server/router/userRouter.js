@@ -23,15 +23,6 @@ function toggleVip(user){
             break;
     }
 }
-// function toggleOrderDate(str){
-//     let _str = str.slice(0,-1),
-//     return _str.split('月')
-// }
-// function countNight(start ,end){
-//     start = toggleOrderDate(start)
-//     end = toggleOrderDate(end)
-
-// }
 router.post('/register',async (req,res)=>{//注册
     const {openID} = req.body
     
@@ -86,7 +77,7 @@ router.get('/allCoupon',async (req,res)=>{
 })
 router.post('/useCoupon',async (req,res)=>{
     const {openID,couponId} = req.body
-    
+    console.log('openID: ', openID);
     
   await User.updateOne({openID},{$pull:{coupon:couponId}})
   await User.updateOne({openID},{$push:{usedCoupon:couponId}})
@@ -181,6 +172,7 @@ router.post('/canExchangeCoupon',async (req,res)=>{
             }
         })
     })
+    data = data.filter(item => +(new Date(item.end)) > Date.now())
     res.json({
         code:1,
     msg:'ok',

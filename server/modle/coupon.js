@@ -27,5 +27,13 @@ module.exports = model('coupon',{
     online:{
         type:Boolean,
         default:true
-    }
+    },
+    exchange :{
+        type:Boolean,
+        default:true
+    },
+    integral:{
+        type:Number,
+        required:true
+    },
 })
