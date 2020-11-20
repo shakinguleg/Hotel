@@ -16,7 +16,7 @@ Component({
     },
     goDetailAction(){
       wx.navigateTo({
-        url: `../../pages/detail/detail?roomInfo=${this.data.roomInfo}`,
+        url: `../../pages/detail/detail?roomInfo=${JSON.stringify(this.data.roomInfo)}`,
       })
     }
   }

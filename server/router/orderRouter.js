@@ -33,7 +33,7 @@ router.get("/allOrder",async (req,res)=>{
 })
 router.post('/addOrder',async (req,res)=>{
   const {state,user} = req.body
-  await  Order.create({
+ const newUser = await  Order.create({
       user:user,
       room:req.body.room,
       count:req.body.count*1,
@@ -50,6 +50,7 @@ router.post('/addOrder',async (req,res)=>{
   res.json({
       code:1,
       msg:"ok",
+      data:newUser
   })
 })
 router.post('/updateState',async (req,res)=>{
