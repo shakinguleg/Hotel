@@ -55,24 +55,30 @@ Component({
         return
       }
 
-      // 当选择优惠券使用时, 选择类型为 未使用(1) 才可
-      if (couponType === 1) {
-        // 当订单金额大于优惠券使用价格
-        if (this.data.orderPrice > limit) {
-          // console.log("111");
-          getApp().data.coupon = {
-            ...getApp().data.coupon,
-            id,
-            price,
-            content,
-            title
-          }
-          console.log(getApp());
+      // 当从客房预订界面选择优惠券时
+      if (this.data.toPath === "../../../pages/reserve_room/reserve_room") {
+        // 当选择优惠券使用时, 选择类型为 未使用(1) 才可
+        if (couponType === 1) {
+          // 当订单金额大于优惠券使用价格
+          if (this.data.orderPrice > limit) {
+            getApp().data.coupon = {
+              ...getApp().data.coupon,
+              id,
+              price,
+              content,
+              title
+            }
+            // wx.navigateTo({
+            //   url: this.data.toPath,
+            // })
 
-          wx.navigateTo({
-            url: this.data.toPath,
-          })
+            // 直接回退, 保持客房预订界面数据不丢失
+            wx.navigateBack({
+              delta: 1,
+            })
+          }
         }
+        return;
       }
     }
   },

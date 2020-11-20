@@ -23,10 +23,8 @@ Page({
     } = getApp()
     
     // 设置余额
-    // 更改为监听(可删除注释)
     this.id = SetUser.call(this, (user) => {
       this.setData({
-        ...this.data,
         totalMoney: user.money + ".00"
       })
     })
@@ -51,7 +49,6 @@ Page({
           }))
           // 设置礼包数据
           this.setData({
-            ...this.data,
             rechargeDataList: arr
           })
         }

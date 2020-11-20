@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "pointsItem": "../../../components/pointsItem/pointsItem"
+  }
 }
