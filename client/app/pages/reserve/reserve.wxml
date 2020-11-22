@@ -3,7 +3,7 @@
   <view class="banner">
     <swiper class="swiper" indicator-dots="true" indicator-active-color="#eee" autoplay="true" interval="3000">
       <swiper-item class="swiper_item" wx:for="{{bannerData}}" wx:key="index">
-        <image src="http://10.36.150.18:3000/{{item}}" />
+        <image src="http://eveal.cn:3030/{{item}}" />
       </swiper-item>
     </swiper>
   </view>

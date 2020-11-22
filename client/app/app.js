@@ -2,7 +2,7 @@
 import Pubsub from './plugin/pubsub'
 App({
   data:{
-      path:"http://10.36.150.18:3000/"
+      path:"http://eveal.cn:3030/"
   },
   setUser(user){
     this.data.user = user

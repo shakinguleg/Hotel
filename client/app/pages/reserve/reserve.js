@@ -18,7 +18,7 @@ Page({
     this.setData({path:getApp().data.path});
     // 请求banner数据
     wx.request({
-      url: 'http://10.36.150.18:3000/api/banner/banner?type=roomDetail',
+      url:this.data.path +  'api/banner/banner?type=roomDetail',
       success:(res)=>{
         this.setData({bannerData:res.data.data[0].image});
       }
