@@ -13,7 +13,23 @@ Page({
   /*** 生命周期函数--监听页面加载
   
   */
+ actionRouter(ev){
+
+  let path = ev.target.dataset.path
+  if(!path){
+    return
+  }
+ if(path === "../../pages/order/order"){
+   wx.switchTab({
+     url: path,
+   })
+ }else{
+  wx.navigateTo({
+    url: path,
+  })
+ }
   
+ },
    onLoad: function (options) { 
       SetUser.call(this) 
 

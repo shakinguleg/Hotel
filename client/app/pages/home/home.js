@@ -1,9 +1,9 @@
 // app/pages/home/home.js
 import SetUser from '../../plugin/setUser'
 import formatDate from '../../plugin/formatDate'
-const BASE_URL = "http://10.36.150.18:3000/"
-const BANNER_URL = "http://10.36.150.18:3000/api/banner/banner?type=home";
-const CENTER_SWIPER_URL = "http://10.36.150.18:3000/api/room/allRoom"
+const BASE_URL = "http://eveal.cn:3030/"
+const BANNER_URL = "http://eveal.cn:3030/api/banner/banner?type=home";
+const CENTER_SWIPER_URL = "http://eveal.cn:3030/api/room/allRoom"
 Page({
   /**
    * 页面的初始数据

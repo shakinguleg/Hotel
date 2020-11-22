@@ -28,6 +28,8 @@ Page({
           },
           dataType:"json",
           success:(res3)=>{
+            console.log(res3);
+            
             getApp().setUser(res3.data.data)
             wx.switchTab({
               url: '../home/home',
